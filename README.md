@@ -25,13 +25,13 @@ This is a full-stack web application that allows users to upload a PDF file and 
 
 - User authentication (Register/Login)
 - 
-[Screenshot 2025-03-31 193641](https://github.com/user-attachments/assets/51edacbb-edbb-4e61-97fb-8f1353b890c7) 
+![Screenshot 2025-03-31 193641](https://github.com/user-attachments/assets/51edacbb-edbb-4e61-97fb-8f1353b890c7) 
   
 - PDF file upload!
 - 
 - Convert PDF to XML!
 -
-- [Screenshot 2025-03-31 193651](https://github.com/user-attachments/assets/2c8f85b9-37aa-47c1-ae08-dcb600a87ae2)
+- ![Screenshot 2025-03-31 193651](https://github.com/user-attachments/assets/2c8f85b9-37aa-47c1-ae08-dcb600a87ae2)
 
 - View converted files  
 - Copy and download converted XML  
