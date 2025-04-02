@@ -1,20 +1,23 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
+import { useRouter } from "next/navigation";
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null);
   const [history, setHistory] = useState<{ name: string; time: string; url: string }[]>([]);
-
-  // Load history from localStorage when the component mounts
+  const router = useRouter();
   useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn !== "true") {
+      alert("Please login first to upload files");
+      router.push("/login");
+    }
     const storedHistory = localStorage.getItem("conversionHistory");
     if (storedHistory) {
       setHistory(JSON.parse(storedHistory));
     }
   }, []);
 
-  // Function to update history in localStorage
   const updateHistory = (newHistory: { name: string; time: string; url: string }[]) => {
     setHistory(newHistory);
     localStorage.setItem("conversionHistory", JSON.stringify(newHistory));
@@ -38,17 +41,18 @@ export default function UploadPage() {
         const xmlFileUrl = data.xmlFile; // Get XML file URL from backend
         const timestamp = new Date().toLocaleString();
 
-        // Update history and persist in localStorage
         const newHistory = [...history, { name: file.name, time: timestamp, url: xmlFileUrl }];
         updateHistory(newHistory);
 
         // Automatically download the converted XML file
+        const originalFileName = file.name.replace(/\.[^/.]+$/, ""); // Remove original extension
         const a = document.createElement("a");
         a.href = xmlFileUrl;
-        a.download = "converted.xml";
+        a.download = `${originalFileName}.xml`; // Save as the same name with .xml extension
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
+
 
         alert("File converted to XML and downloaded!");
       } else {
@@ -65,7 +69,6 @@ export default function UploadPage() {
       <div className="container">
         <h2>Upload PDF</h2>
         <form onSubmit={handleFileUpload}>
-          {/* Custom File Upload Button */}
           <label htmlFor="file-upload" className="custom-file-upload">
             Choose File
           </label>
@@ -76,6 +79,9 @@ export default function UploadPage() {
             onChange={(e) => setFile(e.target.files?.[0] || null)}
             required
           />
+          
+          {/* Display the selected file name */}
+          {file && <span className="file-name">{file.name}</span>}
 
           <button type="submit">Upload & Convert</button>
         </form>
@@ -91,10 +97,10 @@ export default function UploadPage() {
         </ul>
       </div>
 
-      {/* Logout Button Placed Outside the Container */}
       <button className="logout-btn" onClick={() => (window.location.href = "/login")}>
         Logout
       </button>
+
     </>
   );
 }

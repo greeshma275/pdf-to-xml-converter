@@ -17,7 +17,9 @@ export default function LoginPage() {
     });
 
     if (res.ok) {
-      router.push("/upload");
+      // ✅ Set login status in localStorage
+      localStorage.setItem("isLoggedIn", "true");
+      router.push("/upload"); // Redirect after login
     } else {
       alert("Login failed");
     }

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <paragraph></paragraph>
+    <paragraph></paragraph>
+    <paragraph>S. Sachin B. et al.; International Journal of Advance Research, Ideas and Innovations in Technology</paragraph>
+    <paragraph>© 2019, www.IJARIIT.com All Rights Reserved                                                                                              Page |887</paragraph>
+    <paragraph></paragraph>
+    <paragraph>ISSN: 2454-132X</paragraph>
+    <paragraph>Impact factor: 4.295</paragraph>
+    <paragraph>(Volume 5, Issue 3)</paragraph>
+    <paragraph>Available online at: www.ijariit.com</paragraph>
+    <paragraph>Answer script evaluator</paragraph>
+    <paragraph>Sachin B. S.</paragraph>
+    <paragraph>sachinbet17@gmail.com</paragraph>
+    <paragraph>Vidyavardhaka College of</paragraph>
+    <paragraph>Engineering, Mysore, Karnataka</paragraph>
+    <paragraph>Somesh T.</paragraph>
+    <paragraph>somyash97@gmail.com</paragraph>
+    <paragraph>Vidyavardhaka College of</paragraph>
+    <paragraph>Engineering, Mysore, Karnataka</paragraph>
+    <paragraph>Shivaprasad K.</paragraph>
+    <paragraph>shiva15997@gmail.com</paragraph>
+    <paragraph>Vidyavardhaka College of</paragraph>
+    <paragraph>Engineering, Mysore, Karnataka</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Sumanth Hegde</paragraph>
+    <paragraph>sumanthhegde1029@gmail.com</paragraph>
+    <paragraph>Vidyavardhaka College of</paragraph>
+    <paragraph>Engineering, Mysore, Karnataka</paragraph>
+    <paragraph>Radhika A. D.</paragraph>
+    <paragraph>radhika.ad@vvce.ac.in</paragraph>
+    <paragraph>Vidyavardhaka College of</paragraph>
+    <paragraph>Engineering, Mysore, Karnataka</paragraph>
+    <paragraph></paragraph>
+    <paragraph>ABSTRACT</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Every  college,  university,  school  conduct  exams  and  most</paragraph>
+    <paragraph>important  part  of  exams are  the  results.  In  order  to  get  these</paragraph>
+    <paragraph>results,  the  exam  papers  have  to  be evaluated  one  by  one</paragraph>
+    <paragraph>manually. This process of evaluating the exam papers is time</paragraph>
+    <paragraph>consuming  and  requires  more  manpower.  To  overcome  this</paragraph>
+    <paragraph>solution,  we  have  come  up  with  a  thought  that  removes  the</paragraph>
+    <paragraph>manual evaluation process. Our project focuses on developing</paragraph>
+    <paragraph>a  system  that  evaluates  an  answering script  against  a  pre-</paragraph>
+    <paragraph>uploaded marking scheme. Initially, a model is trained with a</paragraph>
+    <paragraph>huge  corpus  (text  data)  and  this  model  is  used  for  further</paragraph>
+    <paragraph>comparison   of   answer   sheets   with   marking   scheme.   For</paragraph>
+    <paragraph>evaluation, the marking scheme is processed and created a bag</paragraph>
+    <paragraph>of words. In  the same  way, even answer  sheets are  processed</paragraph>
+    <paragraph>and created a bag of words. Now, these 2 values are compared</paragraph>
+    <paragraph>using  the  LSI  model  and  marks  are  assigned  to  the  answers</paragraph>
+    <paragraph>according to the comparison percentage obtained.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Keywords— LSI,   TFIDF,  Document   similarity,   Sentiment</paragraph>
+    <paragraph>Analysis</paragraph>
+    <paragraph>1. INTRODUCTION</paragraph>
+    <paragraph>In this era of technology and advancements, everything is being</paragraph>
+    <paragraph>digitized.  From  online  payments  to  patient’s  medical health</paragraph>
+    <paragraph>records, everything is being digitized and made available online.</paragraph>
+    <paragraph>However, there are still many problems unattended which don’t</paragraph>
+    <paragraph>have a digitized solution and continuous work is in progress to</paragraph>
+    <paragraph>provide solutions to all these problems.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>There are OMR sheets in which objective answers are selected</paragraph>
+    <paragraph>from a given range of options. Evaluation of these sheets are also</paragraph>
+    <paragraph>simple as they just check the orientation of the coloured dot and</paragraph>
+    <paragraph>marks are awarded if the coloured circles are there for the correct</paragraph>
+    <paragraph>options. These    systems    already    exist    and    are    already</paragraph>
+    <paragraph>implemented long back.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>However,  there  are  no  evaluations  systems  that  are  capable  of</paragraph>
+    <paragraph>evaluating subjective answers from a given range of answers in</paragraph>
+    <paragraph>an  answering script.  We  have  designed  and  implemented  a</paragraph>
+    <paragraph>software  program  where  the  main  job  is  to  evaluate  subjective</paragraph>
+    <paragraph>answer scripts against a pre-uploaded marking scheme. Marking</paragraph>
+    <paragraph>scheme  contains  the  correct  answers  for  each  question  of  the</paragraph>
+    <paragraph>question paper for which the student writes his/ her own answers.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>2. EXISTING SYSTEM</paragraph>
+    <paragraph>The  current  system  of  evaluation  of  answer  scripts  involves</paragraph>
+    <paragraph>manually  checking  all  the  answer  scripts  one  by  one  and</paragraph>
+    <paragraph>evaluating them by looking at the marking scheme. This system</paragraph>
+    <paragraph>of evaluation takes a lot of time and also makes way for uncertain</paragraph>
+    <paragraph>evaluation. It also takes a lot of time and manpower and involves</paragraph>
+    <paragraph>each  person  to  personally  evaluate  a  specific  subject  answer</paragraph>
+    <paragraph>paper  one  by  one.  The  constraints  in  this  system are time,</paragraph>
+    <paragraph>manpower and efficiency. Efficiency depends on the number of</paragraph>
+    <paragraph>people evaluating, number of papers, and the type of evaluators</paragraph>
+    <paragraph>(different  number  of  evaluators  for  different  subjects).  If a</paragraph>
+    <paragraph>number of papers are huge and the number of evaluators is few,</paragraph>
+    <paragraph>the  efficiency  is  low.  In the case  of  huge  universities,  this</paragraph>
+    <paragraph>efficiency is low most of the times as there will be a huge number</paragraph>
+    <paragraph>of students in the university and the number of answer scripts is</paragraph>
+    <paragraph>also  huge.  In  some  universities,  there  is  a  system  that  uses</paragraph>
+    <paragraph>scanned copies of the answer sheet instead of the physical paper</paragraph>
+    <paragraph>itself. This provides an option to perform valuation digitally but</paragraph>
+    <paragraph>it has to be done by a human.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>3. PROPOSED SYSTEM</paragraph>
+    <paragraph>This system is an extension of digitization of answer sheets. In</paragraph>
+    <paragraph>this  system,  along  with  digitization of  answer  sheets,  even</paragraph>
+    <paragraph>valuation  is  done  by  the  system  itself.  The  system  performs</paragraph>
+    <paragraph>extraction of keywords and this extracted text is then compared</paragraph>
+    <paragraph>to the reference text using Latent similarity indexing. The inputs</paragraph>
+    <paragraph>to this system are digital answer sheets and the reference text.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>The  main  advantage  of  this  system  is the reduction  of  time  of</paragraph>
+    <paragraph>valuation  drastically  and  it  also  diminishes  man  power.  Using</paragraph>
+    <paragraph>this  system,  many numbers of  answer  sheets  can  be evaluated</paragraph>
+    <paragraph>(regardless of what subject they belong to).</paragraph>
+    <paragraph></paragraph>
+    <paragraph>S. Sachin B. et al.; International Journal of Advance Research, Ideas and Innovations in Technology</paragraph>
+    <paragraph>© 2019, www.IJARIIT.com All Rights Reserved                                                                                              Page |888</paragraph>
+    <paragraph>This system can also be hosted online and the models to be used</paragraph>
+    <paragraph>can be made available online so that the evaluator can be used in</paragraph>
+    <paragraph>a wide range of devices and can be accessed remotely. Currently,</paragraph>
+    <paragraph>in this project, the input answer script is limited only for textual</paragraph>
+    <paragraph>data and does not handle images or equations.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>4. METHODOLOGY</paragraph>
+    <paragraph>For  this  project  to  work, a model  is  trained with a huge set  of</paragraph>
+    <paragraph>data (about 60GB of a text file) that is., wiki_corpus so that our</paragraph>
+    <paragraph>model has knowledge of a huge number of English words and it</paragraph>
+    <paragraph>has  a  mapping  from  word  to the number. This  huge  data  is</paragraph>
+    <paragraph>trained on LSI and an LSI model is created. After that, a bag of</paragraph>
+    <paragraph>words is created for the marking scheme, this bag of words is the</paragraph>
+    <paragraph>corpus. Now, this corpus is prepared for comparison by passing</paragraph>
+    <paragraph>the  corpus  through  the  LSI  model  which  generates a set  of</paragraph>
+    <paragraph>indexing  values  that  eases  the  comparison.  In  the  same  way, a</paragraph>
+    <paragraph>bag of words is created from the student’s answer script and even</paragraph>
+    <paragraph>this is passed through the LSI model and generated a set of values</paragraph>
+    <paragraph>is passed through that indexing values created from the marking</paragraph>
+    <paragraph>scheme and yields a comparison value.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>The processing of input data into a bag of words and extracting</paragraph>
+    <paragraph>and comparing the answer sheet and marking scheme happens in</paragraph>
+    <paragraph>many stages. They are as follows:</paragraph>
+    <paragraph></paragraph>
+    <paragraph>4.1 Input text processing</paragraph>
+    <paragraph>This  is  the  first  and  most  important  stage  in  our  project  as  it</paragraph>
+    <paragraph>determines  the  text  that  is  available  for  processing.  We  are</paragraph>
+    <paragraph>considering digital format for both the answer sheet and marking</paragraph>
+    <paragraph>scheme.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Both the marking  scheme  and  answer  sheet  have  to  follow  the</paragraph>
+    <paragraph>below rules:</paragraph>
+    <paragraph>(a) Each answer  must  start  with  question  number followed by</paragraph>
+    <paragraph>“)” and then the text must follow.</paragraph>
+    <paragraph>(b) Each point/sentence must be ended with a full stop.</paragraph>
+    <paragraph>(c) At  the  end  of  each  answer, the tilde (~)  symbol  must  be</paragraph>
+    <paragraph>entered after the last full stop.</paragraph>
+    <paragraph>(d) There must be 1 empty line between each answer.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Format of the answer sheet and marking scheme:</paragraph>
+    <paragraph>1)------------------------------------------.</paragraph>
+    <paragraph>--------------Answer 1--------------------- .~</paragraph>
+    <paragraph></paragraph>
+    <paragraph>&gt;&gt;&gt;&gt;one-line space&lt;&lt;&lt;&lt;</paragraph>
+    <paragraph></paragraph>
+    <paragraph>2)----------------------------------------.</paragraph>
+    <paragraph>--------------Answer 2----------------------.</paragraph>
+    <paragraph>----------------------------------. ~</paragraph>
+    <paragraph></paragraph>
+    <paragraph>4.2 Removing Stop Words</paragraph>
+    <paragraph>From  both  the  marking  scheme  and  the  answer  sheet,  each</paragraph>
+    <paragraph>answer  is  split  to different  lists.  Answers  are  separated  by  a</paragraph>
+    <paragraph>custom delimiter (~) tilde.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Now  from  each  answer  lists,  each  sentence  is  again  put  into</paragraph>
+    <paragraph>another list. So the number of lists inside the answer will be the</paragraph>
+    <paragraph>same as the number of sentences in the answer.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Stopwords are words such as “this, that, is, as” etc.</paragraph>
+    <paragraph>We  remove  stopwords from  teaching sentence because  these</paragraph>
+    <paragraph>words do not contain any meanings on their own hence they are</paragraph>
+    <paragraph>removed in this stage.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>After  removing  stopwords,  all  that  remains  is  keywords  and</paragraph>
+    <paragraph>meaningful data which can be used for comparing.</paragraph>
+    <paragraph>4.3 Bag of words</paragraph>
+    <paragraph>The  problem  with  machine  learning algorithms is that they are</paragraph>
+    <paragraph>unable to process text data directly. The text must be converted</paragraph>
+    <paragraph>to numbers for the algorithm to handle. Bag of words is a method</paragraph>
+    <paragraph>of extracting features from the text.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>It  usually  stores  words in  the  form  of  a  dictionary  where  the</paragraph>
+    <paragraph>vocabulary  of  trained  data is the  key  and  its  frequency  will  be</paragraph>
+    <paragraph>their corresponding values.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>TFIDF is a statistical measure used to evaluate how important a</paragraph>
+    <paragraph>word is to document. The importance increases proportionally to</paragraph>
+    <paragraph>the number of times a word appears in the document.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>4.4 Comparison of text</paragraph>
+    <paragraph>This stage is the actual stage where the data comparison between</paragraph>
+    <paragraph>the answer script and the marking scheme happens. We provide</paragraph>
+    <paragraph>two extra files as input:</paragraph>
+    <paragraph>(a) Marks distribution file which contains question-wise marks</paragraph>
+    <paragraph>distribution.</paragraph>
+    <paragraph>(b) Written answers list where it contains a list of questions that</paragraph>
+    <paragraph>are attended by the student.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>While performing the comparison, there arise 2 scenarios.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>First,  when  the  student  has  written  less  content  than that  of</paragraph>
+    <paragraph>marking  scheme.  In  this  case,  for  each  sentence  is  the  answer</paragraph>
+    <paragraph>sheet, all the sentences in the marking scheme are compared and</paragraph>
+    <paragraph>the sentence (in marking scheme) which has maximum similarity</paragraph>
+    <paragraph>is  assigned  to  that  particular  sentence  in  the  answer  sheet.</paragraph>
+    <paragraph>Similarly,   each   sentence   is   compared   and   gets   its   own</paragraph>
+    <paragraph>comparison percentage.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Second, when the number of sentences in the student’s answer</paragraph>
+    <paragraph>sheet  has  more  lines  than  that  of  the  marking  scheme.  In  this</paragraph>
+    <paragraph>case, for each sentence in the marking scheme, all the sentences</paragraph>
+    <paragraph>in the answer sheet are checked and sentence with a maximum</paragraph>
+    <paragraph>comparison percentage is assigned to that particular sentence in</paragraph>
+    <paragraph>the  answer  sheet. Similarly, all  the  sentences  in  the  marking</paragraph>
+    <paragraph>scheme are compared to the entire answer sheet and each line in</paragraph>
+    <paragraph>the answer  sheet  will  now  be  assigned  to  some  comparison</paragraph>
+    <paragraph>percentage.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>4.5 Sentiment analysis</paragraph>
+    <paragraph>This is the stage where the polarity of the sentence is measured.</paragraph>
+    <paragraph>The polarity of a sentence means the nature of sentence that is.,</paragraph>
+    <paragraph>negative  or  positive  or neutral.  This  stage  is  there  to  provide</paragraph>
+    <paragraph>negation detection for both marking scheme and answer sheets.</paragraph>
+    <paragraph>For example, in the marking scheme, there is a sentence: “India</paragraph>
+    <paragraph>is a secular country “but the student has written, “India is not a</paragraph>
+    <paragraph>secular country”. Then we must be able to differentiate these</paragraph>
+    <paragraph>sentences  and  marks  must  not  be  assigned  to  those  sentences</paragraph>
+    <paragraph>which oppose the actual answer.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>For the  sentiment  analysis,  we  use pattern  library.  It  helps  in</paragraph>
+    <paragraph>extracting the polarity and subjectivity of a sentence. It also has</paragraph>
+    <paragraph>a provision to check the polarity assessment that is., it shows the</paragraph>
+    <paragraph>word which is responsible for the polarity in the sentence.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>This  stage  is  applied  to  the  answer  sentences  only  when  the</paragraph>
+    <paragraph>comparison percentage of that particular sentence is above 80%.</paragraph>
+    <paragraph>Again we have 3 scenarios. The processed sentences cannot be</paragraph>
+    <paragraph>used for sentiment analysis because stopwords have already been</paragraph>
+    <paragraph>removed.  So  for  this  stage,  we  access  the  original  sentences</paragraph>
+    <paragraph>through its index. The sentence of answer sheet is taken and its</paragraph>
+    <paragraph>most similar marking scheme sentence is taken. The polarity of</paragraph>
+    <paragraph>both the sentence is checked.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>S. Sachin B. et al.; International Journal of Advance Research, Ideas and Innovations in Technology</paragraph>
+    <paragraph>© 2019, www.IJARIIT.com All Rights Reserved                                                                                              Page |889</paragraph>
+    <paragraph>In the first case, polarity is checked for both the sentences (one</paragraph>
+    <paragraph>from marking scheme and other from answer sheet) and if both</paragraph>
+    <paragraph>the  polarities  are  either  positive  or  either  negative,  then  that</paragraph>
+    <paragraph>sentence  is  retained  in  the  answer  sheet  and  the  comparison</paragraph>
+    <paragraph>percentage is finalized for that sentence.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>In the second case, if the sentences have opposite polarity (one</paragraph>
+    <paragraph>negative  and  one positive)  then  we take  the  difference  of</paragraph>
+    <paragraph>polarities. If the difference is less than 0.4, we retain the sentence</paragraph>
+    <paragraph>in the answer sheet. If the polarity differences are more than 0.4,</paragraph>
+    <paragraph>then that sentence is deleted from the answer sheet.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>4.6 Assigning Marks</paragraph>
+    <paragraph>After removing all the sentences which have opposing polarities</paragraph>
+    <paragraph>whose difference is greater than 0.4, the next step is to calculate</paragraph>
+    <paragraph>the marks for the answer.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Each sentence has its own comparison percentage. To assign the</paragraph>
+    <paragraph>marks  for  one  particular  answer, the  sum  of  these  comparison</paragraph>
+    <paragraph>percentages is taken and is divided by the number of sentences</paragraph>
+    <paragraph>in the marking scheme.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Now each answer will have its average similarity percentage and</paragraph>
+    <paragraph>the marks is assigned based on this percentage. To get the total</paragraph>
+    <paragraph>marks, marks assigned to all the answers are added and displayed</paragraph>
+    <paragraph>against the maximum marks.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>5. DESIGN AND IMPLEMENTATION</paragraph>
+    <paragraph>The entire stages and processing programs are written in python</paragraph>
+    <paragraph>language  and it also acts as the  back-end  for our project. Even</paragraph>
+    <paragraph>front end is developed to ease the operation of this project and to</paragraph>
+    <paragraph>provide  a  graphical  interface  to  the  user  so  it  is  easy  to</paragraph>
+    <paragraph>understand and simple.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>Providing a  GUI  to  the  project  also  helps  people  with  limited</paragraph>
+    <paragraph>knowledge   about   running   programs   on   the   terminal   and</paragraph>
+    <paragraph>extracting the output by providing a more familiar click and run</paragraph>
+    <paragraph>the interface.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>The  front-end  for  the  project  is  a  typical  window  which  is</paragraph>
+    <paragraph>designed and coded in wxpython, a python GUI library.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>It  also  has  a  file  dialogue so  that  it  is  easy  to  browse  the  files</paragraph>
+    <paragraph>from  the  system  and  select  them  for  evaluation. The  entire</paragraph>
+    <paragraph>background script is linked to a button so when the user selects</paragraph>
+    <paragraph>all  the  files  required  and  clicks  that  particular  button,  the</paragraph>
+    <paragraph>program  runs  in the background,  performs  all  the  6  stages  and</paragraph>
+    <paragraph>outputs the  marks obtained on the  GUI. The  detailed question-</paragraph>
+    <paragraph>wise marks distribution can be seen from the program’s terminal</paragraph>
+    <paragraph>window.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>6. RESULT ANALYSIS</paragraph>
+    <paragraph>Though the  machine learning concept is been in the  market for</paragraph>
+    <paragraph>over  a  decade,  it  still  hasn’t  been  widely  used.  The  reasons</paragraph>
+    <paragraph>behind this are:</paragraph>
+    <paragraph>(a) Implementing  machine  learning  is  not  an  easy  task  and  it</paragraph>
+    <paragraph>takes a lot of time for one to gain knowledge on the libraries</paragraph>
+    <paragraph>that are used for machine learning.</paragraph>
+    <paragraph>(b) The  accuracy  of the future  prediction  of  values  depends</paragraph>
+    <paragraph>highly on the data that is used to train the model. So finding</paragraph>
+    <paragraph>the  right  dataset  to  train  the  model  is  very  difficult  and</paragraph>
+    <paragraph>challenging.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>For a sample social science answer script along with its marking</paragraph>
+    <paragraph>scheme, we were able to get desired results. For testing purposes</paragraph>
+    <paragraph>itself,  some  answers  were  written  correctly  and  some  answers</paragraph>
+    <paragraph>were  written  wrong  deliberately  to  analyze  the  results  of  the</paragraph>
+    <paragraph>system.  But  we  were  able to  achieve  the  desired  results  in  all</paragraph>
+    <paragraph>cases  and  it  was  found  that  the  system  was  performing  the</paragraph>
+    <paragraph>evaluation  pretty  strictly.  However,  we  can  have  a  tolerance</paragraph>
+    <paragraph>factor where in the comparison percentages can be rounded off</paragraph>
+    <paragraph>to the next whole number or the next number which is divisible</paragraph>
+    <paragraph>by 10. (For eg, if comparison percentage for a sentence is 73%,</paragraph>
+    <paragraph>we around it off to 80 %.)</paragraph>
+    <paragraph></paragraph>
+    <paragraph>7. FUTURE ENHANCEMENTS.</paragraph>
+    <paragraph>This system currently  is limited to only textual  data. However,</paragraph>
+    <paragraph>in the near future, the model can be made to handle and evaluate</paragraph>
+    <paragraph>equations and diagrams.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>For this system to  work, we  need the answers and the  marking</paragraph>
+    <paragraph>scheme in the digital format. An image processing model can be</paragraph>
+    <paragraph>implemented so that the system can also accept handwritten data</paragraph>
+    <paragraph>and convert that to digital data automatically.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>This  system  can  be  deployed  in  a  server  local  to  college  or a</paragraph>
+    <paragraph>university  so  that  all  professors  have  access  to  the  system  and</paragraph>
+    <paragraph>can evaluate with ease either with their computers or phones.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>8. CONCLUSION</paragraph>
+    <paragraph>In the existing trend, the answer scripts are evaluated manually</paragraph>
+    <paragraph>by  checking  line  by  line  which  requires  more  manpower  and</paragraph>
+    <paragraph>time.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>But  the  model  that  we  develop  enables  answer  script  to  be</paragraph>
+    <paragraph>evaluated at a very short time and doesn’t require any human</paragraph>
+    <paragraph>intervention.   However, the   model   that   is   to   be   developed</paragraph>
+    <paragraph>depends highly on the dataset that we use to train. Therefore, it</paragraph>
+    <paragraph>is   very   important   that   we   choose   the   dataset   and   the</paragraph>
+    <paragraph>hyperparameters  in  such  a  way  that  maximum  accuracy  is</paragraph>
+    <paragraph>obtained.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>By  using  a  good  dataset,  we  can  be able  to  increase  the  gap</paragraph>
+    <paragraph>between the synonyms and the antonyms, thereby increasing the</paragraph>
+    <paragraph>overall accuracy of the model.</paragraph>
+    <paragraph></paragraph>
+    <paragraph>9. REFERENCES</paragraph>
+    <paragraph>[1] “NLTK: The Natural Language Toolkit” authored by Steven</paragraph>
+    <paragraph>Bird and Edward: Introduction to text processing</paragraph>
+    <paragraph>[2] “A  Compare-aggregate    Model    For    Matching    Text</paragraph>
+    <paragraph>Sequences” authored by Shuohang Wang and Jing Jiang:</paragraph>
+    <paragraph>matching vector values</paragraph>
+    <paragraph>[3]  “Progress  in  the  Application  of  Natural  Language</paragraph>
+    <paragraph>Processing  to  Information  Retrieval  Tasks”  authored  by</paragraph>
+    <paragraph>Alan  F.  Smeaton:  finding  out  the  same  meaning  in a</paragraph>
+    <paragraph>different set of words</paragraph>
+    <paragraph>[4]  “An empirical evaluation of doc2vec with practical insights</paragraph>
+    <paragraph>into document embedding generation” by Jey Han Lau and</paragraph>
+    <paragraph>Timothy Baldwin</paragraph>
+    <paragraph>[5] Bag  of words URL: https://en.wikipedia.org/wiki/Bag-of-</paragraph>
+    <paragraph>words_model</paragraph>
+    <paragraph>[6] Gensim URL: https://radimrehurek.com/gensim/</paragraph>
+    <paragraph>[7] LSI Model and its implementation URL:</paragraph>
+    <paragraph>https://radimrehurek.com/gensim/models/lsimodel.html</paragraph>
+    <paragraph>[8] The pattern for sentimental analysis. URL:</paragraph>
+    <paragraph>https://www.clips.uantwerpen.be/pages/pattern-en</paragraph>
+    <paragraph>[9] TFIDF URL:https://medium.freecodecamp.org/how-to-</paragraph>
+    <paragraph>process-textual-data-using-tf-idf-in-python-cd2bbc0a94a3</paragraph>
+    <paragraph>[10] GUI using wxpython URL: https://wxpython.org/</paragraph>
+    <paragraph>[11]  Designing buttons and binding them with python functions.</paragraph>
+    <paragraph>URL: https://www.tutorialspoint.com/wxpython/</paragraph>
+</document>
