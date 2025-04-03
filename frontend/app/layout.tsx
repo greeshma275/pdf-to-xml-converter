@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import "./globals.css"; 
 import { useRouter } from "next/navigation";
-import "./globals.css"; // Import CSS
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -10,19 +10,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const [showHome, setShowHome] = useState(true);
 
   useEffect(() => {
-    const loggedIn = localStorage.getItem("isLoggedIn") === "true";
-    setIsLoggedIn(loggedIn);
+    if (typeof window !== "undefined") {  // ✅ Ensure `window` is available
+      const loggedIn = localStorage.getItem("isLoggedIn") === "true";
+      setIsLoggedIn(loggedIn);
 
-    // Show Home for 5 seconds, then redirect to Login (only on first load)
-    const isFirstLoad = sessionStorage.getItem("firstLoad");
-    if (!isFirstLoad) {
-      sessionStorage.setItem("firstLoad", "true"); // Prevent re-execution
-      setTimeout(() => {
+      const isFirstLoad = sessionStorage.getItem("firstLoad");
+      if (!isFirstLoad) {
+        sessionStorage.setItem("firstLoad", "true");
+        setTimeout(() => {
+          setShowHome(false);
+          router.push("/login");
+        }, 5000);
+      } else {
         setShowHome(false);
-        router.push("/login");
-      }, 5000);
-    } else {
-      setShowHome(false);
+      }
     }
   }, []);
 
@@ -38,7 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <title>PDF to XML Converter</title>
-        <link rel="stylesheet" href="/globals.css" />
       </head>
       <body>
         <nav className="navbar">
@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           )}
         </nav>
         <main>
-          {showHome ? <a href="/">Home</a> : children}
+          {showHome ? <h1>Welcome to Home Page</h1> : children}
         </main>
       </body>
     </html>

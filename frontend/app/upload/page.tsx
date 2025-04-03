@@ -96,11 +96,6 @@ export default function UploadPage() {
           ))}
         </ul>
       </div>
-
-      <button className="logout-btn" onClick={() => (window.location.href = "/login")}>
-        Logout
-      </button>
-
     </>
   );
 }

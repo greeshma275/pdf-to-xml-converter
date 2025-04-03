@@ -58,9 +58,10 @@ body::before {
 }
 
 /* Container Styling */
+/* Make the container expand automatically */
 .container {
-  background: linear-gradient(135deg,#f8f7f7, #bcbcbc) ;
-  width: 600px;  /* Bigger Size */
+  background: linear-gradient(135deg, #f8f7f7, #bcbcbc);
+  width: 600px;  /* Keep the width fixed */
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -68,15 +69,36 @@ body::before {
   text-align: center;
   border: 3px solid transparent;
   transition: all 0.3s ease-in-out;
-  opacity:0.8;
+  opacity: 0.8;
+  max-height: 80vh; /* Prevent excessive growth */
+  overflow-y: auto; 
+  overflow-x: hidden;/* Add scroll only when needed */
 }
 
-/* Container Hover Effect (Enlarge & Border Color Change) */
-.container:hover {
-  transform: scale(1.05);
-  border: 3px solid #0f0f0f;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+/* Ensure the history list items stack properly */
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Remove extra spacing */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
+/* Individual list items */
+.history-item {
+  background: #f7f6f8;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0d0d0d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-wrap: break-word;
+}
+
 
 /* Styled File Upload Button */
 input[type="file"] {
@@ -137,23 +159,7 @@ button:active {
 }
 
 /* Conversion History */
-.history-list {
-  list-style: none;
-  padding: 0;
-}
 
-.history-item {
-  background: #f7f6f8;
-  padding: 8px 15px;
-  border-radius: 5px;
-  margin: 5px 0;
-  font-size: 14px;
-  font-weight: bold;
-  color: #0d0d0d;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 /* Logout Button (Outside Container) */
 .logout-btn {

@@ -1,105 +1,49 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-export default function UploadPage() {
-  const [file, setFile] = useState<File | null>(null);
-  const [history, setHistory] = useState<{ name: string; time: string; url: string }[]>([]);
+
+export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const router = useRouter();
+
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (isLoggedIn !== "true") {
-      alert("Please login first to upload files");
-      router.push("/login");
-    }
-    const storedHistory = localStorage.getItem("conversionHistory");
-    if (storedHistory) {
-      setHistory(JSON.parse(storedHistory));
+    if (typeof window !== "undefined") {  // ✅ Prevent SSR error
+      const loggedIn = localStorage.getItem("isLoggedIn") === "true";
+      if (loggedIn) {
+        router.push("/upload");
+      }
     }
   }, []);
 
-  const updateHistory = (newHistory: { name: string; time: string; url: string }[]) => {
-    setHistory(newHistory);
-    localStorage.setItem("conversionHistory", JSON.stringify(newHistory));
-  };
-
-  const handleFileUpload = async (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!file) return alert("Please select a file");
+    const res = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const res = await fetch("http://localhost:3001/upload", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        const xmlFileUrl = data.xmlFile; // Get XML file URL from backend
-        const timestamp = new Date().toLocaleString();
-
-        const newHistory = [...history, { name: file.name, time: timestamp, url: xmlFileUrl }];
-        updateHistory(newHistory);
-
-        // Automatically download the converted XML file
-        const a = document.createElement("a");
-        a.href = xmlFileUrl;
-        a.download = "converted.xml";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-
-        alert("File converted to XML and downloaded!");
-      } else {
-        alert("Upload failed");
+    if (res.ok) {
+      if (typeof window !== "undefined") {
+        localStorage.setItem("isLoggedIn", "true"); // ✅ Store login state safely
       }
-    } catch (error) {
-      console.error("Error uploading file:", error);
-      alert("An error occurred during upload.");
+      router.push("/upload");
+    } else {
+      alert("Login failed");
     }
   };
 
   return (
-    <>
-      <div className="container">
-        <h2>Upload PDF</h2>
-        <form onSubmit={handleFileUpload}>
-          <label htmlFor="file-upload" className="custom-file-upload">
-            Choose File
-          </label>
-          <input
-            id="file-upload"
-            type="file"
-            accept="application/pdf"
-            onChange={(e) => setFile(e.target.files?.[0] || null)}
-            required
-          />
-          
-          {/* Display the selected file name */}
-          {file && <span className="file-name">{file.name}</span>}
-
-          <button type="submit">Upload & Convert</button>
-        </form>
-
-        <h3>Conversion History</h3>
-        <ul className="history-list">
-          {history.map((item, index) => (
-            <li key={index} className="history-item">
-              <a href={item.url} target="_blank" rel="noopener noreferrer">{item.name}</a>
-              <span>{item.time}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <button className="logout-btn" onClick={() => (window.location.href = "/login")}>
-        Logout
-      </button>
-
-    </>
+    <div className="container">
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="/register">Register</a></p>
+    </div>
   );
 }
