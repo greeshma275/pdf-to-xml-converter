@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <paragraph>International Journal of Computer Applications (0975 – 8887)</paragraph>
+    <paragraph>Volume 186 – No.42, September 2024</paragraph>
+    <paragraph>22</paragraph>
+    <paragraph>NLP and OCR based Automatic Answer Script</paragraph>
+    <paragraph>Evaluation System</paragraph>
+    <paragraph>Pranav Deepak</paragraph>
+    <paragraph>Dept. of ISE</paragraph>
+    <paragraph>BMS College of</paragraph>
+    <paragraph>Engineering</paragraph>
+    <paragraph>Bangalore, India</paragraph>
+    <paragraph>R. Rohan</paragraph>
+    <paragraph>Dept. of ISE</paragraph>
+    <paragraph>BMS College of</paragraph>
+    <paragraph>Engineering</paragraph>
+    <paragraph>Bangalore, India</paragraph>
+    <paragraph>R. Rohith</paragraph>
+    <paragraph>Dept. of ISE</paragraph>
+    <paragraph>BMS College of</paragraph>
+    <paragraph>Engineering</paragraph>
+    <paragraph>Bangalore, India</paragraph>
+    <paragraph>Roopa R., PhD</paragraph>
+    <paragraph>Dept. of ISE</paragraph>
+    <paragraph>BMS College of</paragraph>
+    <paragraph>Engineering</paragraph>
+    <paragraph>Bangalore, India</paragraph>
+    <paragraph>ABSTRACT</paragraph>
+    <paragraph>Evaluation of  answer  scripts is  a  tedious laborious process  in</paragraph>
+    <paragraph>the education domain. Proper solution is proposed in this paper</paragraph>
+    <paragraph>using  two  different  state  of  art  technologies  i.e.,  Natural</paragraph>
+    <paragraph>Language     Processing     (NLP)     and     Optical     Character</paragraph>
+    <paragraph>Recognition (OCR). To develop the Automatic Answer Script</paragraph>
+    <paragraph>Evaluation System. The system is intended to simplify grading</paragraph>
+    <paragraph>by  automatic  the  scoring  of  written  responses  in  a  consistent</paragraph>
+    <paragraph>and accurate way. The NLP portion of the system is responsible</paragraph>
+    <paragraph>for  understanding  the  semantic  purposes  in  textual  content  of</paragraph>
+    <paragraph>answer  scripts.  It  uses  state-of-the-art  language  models  to</paragraph>
+    <paragraph>assess   and   infer   the   context,   coherence,   and   entailment</paragraph>
+    <paragraph>properties   of   the   generated   text   answers.   Using   NLP   to</paragraph>
+    <paragraph>understand  text,  the  system  can  check  not  only  for  correct</paragraph>
+    <paragraph>grammar  but  also  gauge  how  deeply  a  particular  concept  is</paragraph>
+    <paragraph>understood.</paragraph>
+    <paragraph>Keywords</paragraph>
+    <paragraph>Natural Language Processing, OCR Analysis</paragraph>
+    <paragraph>1. INTRODUCTION</paragraph>
+    <paragraph>In  the  field  of  education,  evaluation  is  a  very  important</paragraph>
+    <paragraph>mechanism used to measure students understanding as well in</paragraph>
+    <paragraph>terms of mastery over various subjects. Traditionally, this has</paragraph>
+    <paragraph>taken a form of manual and time-consuming process which is</paragraph>
+    <paragraph>also subject to certain degree subjective player biases. For that</paragraph>
+    <paragraph>reason, a push   towards   an   automated   solution!   But   as</paragraph>
+    <paragraph>technology  tools  like  Natural  Language  Processing  (NLP),</paragraph>
+    <paragraph>Optical   Character   Recognition   (OCR),   etc,   have   started</paragraph>
+    <paragraph>evolving  and  ramping  up  that  are  equipped  to  automate  the</paragraph>
+    <paragraph>evaluation  process  drastically.  As  the  current  shift  changed</paragraph>
+    <paragraph>everything,   implementation   of   Automatic   Answer   Script</paragraph>
+    <paragraph>Evaluation  Systems  (AASES)  has  been  initiated,  wherein</paragraph>
+    <paragraph>through NLP and OCR techniques; these systems analyze and</paragraph>
+    <paragraph>evaluative student’s responses more effectively in an impartial</paragraph>
+    <paragraph>way.</paragraph>
+    <paragraph>NLP is a subfield of AI that enables computers to understand,</paragraph>
+    <paragraph>interpret and generate human language in ways that are difficult</paragraph>
+    <paragraph>for ordinary humans to read. By leveraging techniques such as</paragraph>
+    <paragraph>machine learning, deep learning, and statistical modelling, NLP</paragraph>
+    <paragraph>systems  can  process  vast  amounts  of  textual  data  and  extract</paragraph>
+    <paragraph>valuable  insights.  In  the  context  of  AASES,  NLP  algorithms</paragraph>
+    <paragraph>are employed to analyze the semantic and syntactic structure of</paragraph>
+    <paragraph>students'   answers,   allowing   for   the   identification   of   key</paragraph>
+    <paragraph>concepts, logical coherence, and grammatical accuracy.</paragraph>
+    <paragraph>Complementing NLP, OCR technology plays a crucial role in</paragraph>
+    <paragraph>AASES  by  facilitating  the  extraction  of  textual  information</paragraph>
+    <paragraph>from  handwritten  or  printed answer  scripts.  OCR  systems</paragraph>
+    <paragraph>utilize  image  processing  algorithms  to  recognize  and  convert</paragraph>
+    <paragraph>text  from  scanned  documents  into  machine-readable  format.</paragraph>
+    <paragraph>This capability is particularly valuable in educational settings</paragraph>
+    <paragraph>where   answer   scripts   may   be   handwritten,   ensuring   that</paragraph>
+    <paragraph>AASES can evaluate responses across a variety of formats.</paragraph>
+    <paragraph>The  integration  of  NLP  and  OCR  technologies  in  AASES</paragraph>
+    <paragraph>offers  several   benefits  over   traditional   manual   evaluation</paragraph>
+    <paragraph>methods.  Firstly,  it  significantly  reduces  the  time  and  effort</paragraph>
+    <paragraph>required  for  grading,  enabling  educators  to  focus  more  on</paragraph>
+    <paragraph>providing personalized feedback and guidance to students.</paragraph>
+    <paragraph>Moreover, AASES can handle large volumes of answer scripts</paragraph>
+    <paragraph>with  consistency  and  impartiality,  minimizing  the  impact  of</paragraph>
+    <paragraph>subjective biases inherent in human grading. Additionally, by</paragraph>
+    <paragraph>providing  instantaneous  feedback,  AASES  promote  active</paragraph>
+    <paragraph>learning  and  encourage  students to  reflect  on  their  responses,</paragraph>
+    <paragraph>thereby fostering a deeper understanding of the subject matter.</paragraph>
+    <paragraph>Furthermore,  AASES  have  the  potential  to  adapt  and  evolve</paragraph>
+    <paragraph>over  time  through  continuous  learning  and  refinement.  By</paragraph>
+    <paragraph>analyzing  patterns  in  students'  responses  and  feedback  from</paragraph>
+    <paragraph>educators,  these  systems  can  enhance  their  accuracy  and</paragraph>
+    <paragraph>effectiveness,   ultimately leading   to   improved   assessment</paragraph>
+    <paragraph>outcomes.    Moreover,    AASES    can    be    customized    to</paragraph>
+    <paragraph>accommodate    different    evaluation    criteria,    curriculum</paragraph>
+    <paragraph>requirements,  and  language  variations,  making  them  versatile</paragraph>
+    <paragraph>tools  for  educators  across  various  disciplines  and  educational</paragraph>
+    <paragraph>settings.</paragraph>
+    <paragraph>Despite   the   numerous   advantages   offered   by   AASES,</paragraph>
+    <paragraph>challenges  remain  in  their  implementation  and  deployment.</paragraph>
+    <paragraph>Ensuring   the   accuracy   and   reliability   of   NLP   and   OCR</paragraph>
+    <paragraph>algorithms,    especially    in    handling    diverse    languages,</paragraph>
+    <paragraph>handwriting  styles,  and  contextual  nuances,  is  critical  to  the</paragraph>
+    <paragraph>success  of  these  systems.  Additionally,  addressing  concerns</paragraph>
+    <paragraph>related  to  data  privacy,  security, and  ethical  considerations  is</paragraph>
+    <paragraph>paramount    to    building    trust    and    acceptance    among</paragraph>
+    <paragraph>stakeholders. Nonetheless, with ongoing advancements in NLP</paragraph>
+    <paragraph>and  OCR  technologies,  coupled  with  concerted  efforts  in</paragraph>
+    <paragraph>research and development, AASES are poised to revolutionize</paragraph>
+    <paragraph>the   educational   assessment   landscape,   offering   scalable,</paragraph>
+    <paragraph>efficient,    and    objective    means    of    evaluating    students'</paragraph>
+    <paragraph>performance.</paragraph>
+    <paragraph>2. DETAILED SURVEY</paragraph>
+    <paragraph>[1] The research question under study focuses on designing an</paragraph>
+    <paragraph>effective,  accurate  automatic  grading  system,  with  marginal</paragraph>
+    <paragraph>percentage  error,  for  the  Generally  Theory-based  subjects,</paragraph>
+    <paragraph>having no disparity with the grading system used by educators.</paragraph>
+    <paragraph>The response to this research question is the bottleneck in the</paragraph>
+    <paragraph>manipulation of answer scripts, which results to increased time</paragraph>
+    <paragraph>consumption, lack of efficiency, and most importantly, biases</paragraph>
+    <paragraph>in  the  score  assignment.  The  approaches  used  in  this  paper</paragraph>
+    <paragraph>incorporate  Natural  Language  Processing  (NLP),  semantic</paragraph>
+    <paragraph>analysis,  and  ontology  with  the  aim  of  creating  intelligent</paragraph>
+    <paragraph>International Journal of Computer Applications (0975 – 8887)</paragraph>
+    <paragraph>Volume 186 – No.42, September 2024</paragraph>
+    <paragraph>23</paragraph>
+    <paragraph>grading  system.  In  turning  the  answer  scripts  into  machine-</paragraph>
+    <paragraph>readable format, the OCR feature is adopted in this system for</paragraph>
+    <paragraph>identifying textual content alone, but is also capable of dealing</paragraph>
+    <paragraph>with  other  components  such  as tables  and  figures.  The  paper</paragraph>
+    <paragraph>presents method of and best approach to grading using machine</paragraph>
+    <paragraph>learning techniques as well as the application of support vector</paragraph>
+    <paragraph>machines  in   grading.   Unfortunately,   the  usually   involved</paragraph>
+    <paragraph>datasets  in  the  respective  decade  are  not discussed  from  the</paragraph>
+    <paragraph>search  results  in  the  paper.  However,  it  is  probable  that  the</paragraph>
+    <paragraph>researchers    employed    a    set    of    answer    scripts    for</paragraph>
+    <paragraph>training/development  and  a  set  of  grading  criteria/rubrics  for</paragraph>
+    <paragraph>grading the students’ papers.</paragraph>
+    <paragraph>[2] acknowledges  effectiveness  of  an  automatic  method  of</paragraph>
+    <paragraph>essay scoring in mitigating the issue of limited time in marking</paragraph>
+    <paragraph>writing  assignments  and  subjectivity  of  the  grading  process.</paragraph>
+    <paragraph>The procedures adopted in the foregoing paper involve the use</paragraph>
+    <paragraph>of Natural Language Processing (NLP), sentiment analysis, and</paragraph>
+    <paragraph>machine  learning  specifically  the  Long  Short-Term  Memory</paragraph>
+    <paragraph>(LSTM) models for essay grading where the essays are written</paragraph>
+    <paragraph>in   English.   The   phenomena   are identified   using   NLP</paragraph>
+    <paragraph>algorithms  and  it  utilizes  syntactic,  semantic  and  sentiment</paragraph>
+    <paragraph>features of the essays to predict the grades by employing LSTM</paragraph>
+    <paragraph>models.</paragraph>
+    <paragraph>[3] The  paper  identifies  the  challenges  and  limitations  of</paragraph>
+    <paragraph>manual   evaluation   of   subjective   answers,   such   as   bias,</paragraph>
+    <paragraph>inconsistency, time consumption, and human resources. It aims</paragraph>
+    <paragraph>to  develop  a  system  that  can  automate  the  evaluation process</paragraph>
+    <paragraph>and reduce the need for human intervention. The paper presents</paragraph>
+    <paragraph>a  two-part  system:  a  checker  and  an  evaluator.  The  checker</paragraph>
+    <paragraph>takes a question, a student’s answer, an expected answer, and</paragraph>
+    <paragraph>total marks as input, and assigns a score to the student’s answer</paragraph>
+    <paragraph>based  on  grammar,  keywords,  and  similarity.  The  evaluator</paragraph>
+    <paragraph>takes  a  sample  of  student’s  answers  and  finds  the  best</paragraph>
+    <paragraph>combination  of  evaluation  techniques  and  weights  for  each</paragraph>
+    <paragraph>question. The system allows the user to choose from different</paragraph>
+    <paragraph>methods for keyword extraction, summarization, and similarity</paragraph>
+    <paragraph>check,  or  use  the  optimal  combination  suggested  by  the</paragraph>
+    <paragraph>evaluator.</paragraph>
+    <paragraph>[4] The paper is organized by first presenting the background</paragraph>
+    <paragraph>work  which  is  divided  into  the  research  techniques  which</paragraph>
+    <paragraph>include  the  similarity  measures  and  the  machine  learning</paragraph>
+    <paragraph>techniques. The paper also overviews the pros and cons of the</paragraph>
+    <paragraph>methods and offers some recommendations for an ideal grading</paragraph>
+    <paragraph>system:  You  can  see  that  the  automation  of  the  answers</paragraph>
+    <paragraph>valuation  scripts  provides  the  grading  system  bias-free  and</paragraph>
+    <paragraph>coherent. This is why there is a need to establish a model that</paragraph>
+    <paragraph>erases    the    precisions    and    achievements    the    grading</paragraph>
+    <paragraph>performance because the outcome of the assessments concerns</paragraph>
+    <paragraph>the student’s future. Consequently, having reviewed the study,</paragraph>
+    <paragraph>the authors established that there exists two primary strategies</paragraph>
+    <paragraph>in answer grading; similarity measures and Machine Learning</paragraph>
+    <paragraph>strategies.  While  similarity-based  measures  do  not  require  a</paragraph>
+    <paragraph>large  training  set,  these  methods  are  not  effective  in  cases</paragraph>
+    <paragraph>where it needs to mine for open-ended responses. On the other</paragraph>
+    <paragraph>hand,   ML   techniques  expanded   the  possible  coverage   of</paragraph>
+    <paragraph>grading  systems  and  they  do  well  even  with  the  semi-open-</paragraph>
+    <paragraph>ended questions. This means an enormous labelled training set</paragraph>
+    <paragraph>is needed to solve each question which may not be convenient</paragraph>
+    <paragraph>at all.</paragraph>
+    <paragraph>[5] The paper uses various methodologies for each component</paragraph>
+    <paragraph>of  the  system,  such  as  OCR,  NLP,  machine  learning,  and</paragraph>
+    <paragraph>similarity algorithms. For image text extraction, the paper uses</paragraph>
+    <paragraph>py-tesseract, which is a Python-based OCR tool that converts</paragraph>
+    <paragraph>images into text. For summarization, the paper uses a keyword-</paragraph>
+    <paragraph>based technique that selects the most frequent words and avoids</paragraph>
+    <paragraph>the  less  frequent  words  to  generate  a  summary.  For  text</paragraph>
+    <paragraph>preprocessing,  the  paper  uses  NLTK,  which  is  a  popular</paragraph>
+    <paragraph>framework  for  natural  language  processing,  and  performs</paragraph>
+    <paragraph>tokenization,    stop-word    removal,    lemmatization,   bigram</paragraph>
+    <paragraph>creation, and word frequency count. For information retrieval,</paragraph>
+    <paragraph>the paper uses a word2vec model to convert words into vectors</paragraph>
+    <paragraph>and  measure  their  semantic  similarity.  For  mark  scoring,  the</paragraph>
+    <paragraph>paper uses four similarity measures: cosine similarity, Jaccard</paragraph>
+    <paragraph>similarity,  bigram  similarity,  and  synonym  similarity,  which</paragraph>
+    <paragraph>compare  the  student's  answer  with  the  correct  answer  and</paragraph>
+    <paragraph>calculate a score based on the angle, intersection, structure, and</paragraph>
+    <paragraph>synonyms of the sentences.</paragraph>
+    <paragraph>[6] proposes a system that consists of the following steps: input</paragraph>
+    <paragraph>image, preprocessing, feature extraction, text recognition, NLP</paragraph>
+    <paragraph>techniques, data splitting, classification, mark evaluation, and</paragraph>
+    <paragraph>performance metrics. The system uses the py-tesseract library</paragraph>
+    <paragraph>for OCR,   the   mean   and   standard   deviation   for   feature</paragraph>
+    <paragraph>extraction,    the    artificial    neural    network    (ANN)    for</paragraph>
+    <paragraph>classification,  and  the  number  of  words  and  letters  for  mark</paragraph>
+    <paragraph>evaluation.  The  paper  uses  various  methodologies  such  as</paragraph>
+    <paragraph>image processing, OCR, NLP, and deep learning to implement</paragraph>
+    <paragraph>the  proposed  system.  The  paper  also  uses  some  tools  such  as</paragraph>
+    <paragraph>tkinter,   matplotlib,   and   numpy   for   data   handling   and</paragraph>
+    <paragraph>visualization. It reviews some of the previous works related to</paragraph>
+    <paragraph>OCR, NLP, and answer evaluation using machine learning. The</paragraph>
+    <paragraph>paper  cites  some  of  the  challenges  and  limitations  of  the</paragraph>
+    <paragraph>existing methods and highlights the novelty and advantages of</paragraph>
+    <paragraph>the proposed system.</paragraph>
+    <paragraph>[7] Preprocessing the  answer  scripts  involves  data processing</paragraph>
+    <paragraph>including methods like tokenization, lemmatization, and word</paragraph>
+    <paragraph>embedding  which  converts  the  answer  scripts  into  numerical</paragraph>
+    <paragraph>vector  form.  To  do  so,  the  paper  employs  deep  learning</paragraph>
+    <paragraph>techniques  such  as  LSTM,  Recurrent  neural  networks,  and</paragraph>
+    <paragraph>dropout and other methods to learn the semantic representation</paragraph>
+    <paragraph>of the answer scripts and then assign score to them. In the study,</paragraph>
+    <paragraph>the  D-DAS  is  trained  and  evaluated  through  a  supervised</paragraph>
+    <paragraph>learning  technique  by  providing  answer  scripts  along  with</paragraph>
+    <paragraph>human-assessed scores as the manual dataset. The paper looks</paragraph>
+    <paragraph>at  the  existing  literature  on  AES,  and  other  short  answer</paragraph>
+    <paragraph>grading    systems,    culminating    in    their    strengths    and</paragraph>
+    <paragraph>weaknesses.  It  also  walks  through  various  forms  of  LSTM</paragraph>
+    <paragraph>models,    including    simple    LSTM,    deep    LSTM,    and</paragraph>
+    <paragraph>bidirectional  LSTM,  as  well  as  their  use  in  practical  natural</paragraph>
+    <paragraph>language processing and information retrieval applications.</paragraph>
+    <paragraph>[8] The paper  also outlines  the various  earlier  works  done  on</paragraph>
+    <paragraph>the use of a computer to evaluate, text mining and measurement</paragraph>
+    <paragraph>of   text   similarity.   For   the   assessment   of   the   student</paragraph>
+    <paragraph>performance,  there  currently  exists  an  evaluation  paradigm</paragraph>
+    <paragraph>which  involves  a  powerful  and  effective  Natural  Language</paragraph>
+    <paragraph>Processing (NLP) algorithm. This research was followed by the</paragraph>
+    <paragraph>creation  of  the  tool  that  incorporates  the  NLP  analysis  along</paragraph>
+    <paragraph>with   the   Artificial   Neural   Network   (ANN)   to   perform</paragraph>
+    <paragraph>calculations.   A  filter  set   for  matching   an   answer   to  the</paragraph>
+    <paragraph>examination process is developed by the faculty in form of an</paragraph>
+    <paragraph>answer  sheet  and  a  keyword  dataset  corresponding  to  the</paragraph>
+    <paragraph>answer  for  the  examination  process.  In  this  context,  these</paragraph>
+    <paragraph>datasets are contained in a data storage system. The results are</paragraph>
+    <paragraph>then compared to the ANN algorithm to identify if they contain</paragraph>
+    <paragraph>the correct answer from the student. Also, the student’s answer</paragraph>
+    <paragraph>is  corrected  for  spelling  and  grammatical  mistakes  whenever</paragraph>
+    <paragraph>there  is  unevenness  using  the  NLP  algorithm.  The  results</paragraph>
+    <paragraph>generated from the text mining technique are calculated as soon</paragraph>
+    <paragraph>as  the  techniques  from  NLP  and  ANN  reach  the  end  of  their</paragraph>
+    <paragraph>process.</paragraph>
+    <paragraph>[9] presents  NLP  techniques,  such  as  tokenization,  part-of-</paragraph>
+    <paragraph>International Journal of Computer Applications (0975 – 8887)</paragraph>
+    <paragraph>Volume 186 – No.42, September 2024</paragraph>
+    <paragraph>24</paragraph>
+    <paragraph>speech  tagging,  stop  word removal,  stemming,  and  semantic</paragraph>
+    <paragraph>similarity  checking,  to  preprocess  and  analyze  the  student</paragraph>
+    <paragraph>answers and compare them with the standard answers. Latent</paragraph>
+    <paragraph>Semantic Analysis (LSA), which is an NLP technique based on</paragraph>
+    <paragraph>a mathematical model that creates a vector representation of a</paragraph>
+    <paragraph>document and measures the similarity between documents by</paragraph>
+    <paragraph>calculating the distance between vectors. Bilingual Evaluation</paragraph>
+    <paragraph>Understudy (BLEU), which is an algorithm that analyzes and</paragraph>
+    <paragraph>measures  the  similarity  between  the  student  answer  and  the</paragraph>
+    <paragraph>standard answer based on the n-gram co-occurrence matching</paragraph>
+    <paragraph>procedure.</paragraph>
+    <paragraph>[10] presents a system for online paper evaluation using NLP</paragraph>
+    <paragraph>for   handwritten   answer   sheets   and   automatic   mark   sheet</paragraph>
+    <paragraph>publishing.  The  system  consists  of  the  following  modules:</paragraph>
+    <paragraph>registration  and  login,  upload,  OCR,  tokenization,  similarity</paragraph>
+    <paragraph>check and scoring. The system allows students to upload their</paragraph>
+    <paragraph>scanned  answer  sheets  and  teachers  to  upload  their  answer</paragraph>
+    <paragraph>keys.  The  system  then  converts  the  answer  sheets  into  text</paragraph>
+    <paragraph>using  OCR,  tokenizes  the  text  and  removes  stop  words,</paragraph>
+    <paragraph>compares  the  text  with  the  answer  keys  using  WordNet  and</paragraph>
+    <paragraph>Corpus,  and  assigns  marks  based  on  the  cosine  similarity</paragraph>
+    <paragraph>measure.  The  system  also  generates  a  mark  sheet  for  each</paragraph>
+    <paragraph>student and displays the results to the users. The paper also uses</paragraph>
+    <paragraph>the cosine formula to calculate the similarity score between the</paragraph>
+    <paragraph>answer sheet and the answer key, and to determine the marks</paragraph>
+    <paragraph>obtained by the student.</paragraph>
+    <paragraph>[11] In this paper, the use of NLP and ML in creating a model</paragraph>
+    <paragraph>to assess free-response answer scripts. This paper shall attempt</paragraph>
+    <paragraph>at  offering  a  solution  to  the  general  problem  of  the  way  in</paragraph>
+    <paragraph>which answer scripts in formative and summative assessments</paragraph>
+    <paragraph>to  general  tests  and  examinations  are  evaluated,  especially</paragraph>
+    <paragraph>during    the    COVID-19    pandemic    and    the    lockdown.</paragraph>
+    <paragraph>Accordingly,  the  paper  presents  a  model  responsible  for  the</paragraph>
+    <paragraph>scoring  of  descriptive  answers  with  the  help  of  the  similarity</paragraph>
+    <paragraph>feature that can be calculated with the help of answer keywords</paragraph>
+    <paragraph>extracted from the reference solution. The paper also examines</paragraph>
+    <paragraph>several  prior  systems  and  research  studies  that  deal  with  the</paragraph>
+    <paragraph>issue of using text perception assessment for the assessment of</paragraph>
+    <paragraph>the answer  scripts  by  employing  text  extraction,  similarity</paragraph>
+    <paragraph>estimation,   BLEU   engineering   modification,   probabilistic</paragraph>
+    <paragraph>semantic/text   relatedness   assessment,   ontology,   artificial</paragraph>
+    <paragraph>neural network, Wordnet, Word2vec, WMD, cosine similarity,</paragraph>
+    <paragraph>multinomial    naïve    Bayes, and    term    frequency-inverse</paragraph>
+    <paragraph>document frequency. The paper validates if the system works</paragraph>
+    <paragraph>according  to  the  model  on  a local  dataset  by  comparing  the</paragraph>
+    <paragraph>reference  answers  with  student  answers  on  the  computerized</paragraph>
+    <paragraph>tests and comparing the two sets of answers on a manual basis.</paragraph>
+    <paragraph>The  paper  states  that  the  proposed  model  was  able  to  get</paragraph>
+    <paragraph>average  accuracy  of  80%  and developed  a  text  file  that gives</paragraph>
+    <paragraph>the score for the answers. To support their arguments, the paper</paragraph>
+    <paragraph>also  presents  a  graphical  representation  of  the  validation</paragraph>
+    <paragraph>process carried out manually and with the proposed system.</paragraph>
+    <paragraph>[12] The  paper  proposes  a  system  called  Automatic  Answer</paragraph>
+    <paragraph>Checker  (AAC),  which  consists  of  a  web-based  interface  for</paragraph>
+    <paragraph>uploading  question  papers  and  answer  sheets,  and  a  machine</paragraph>
+    <paragraph>learning  module  for  analyzing  and  scoring  the  answers.  The</paragraph>
+    <paragraph>system  uses  natural  language  processing  techniques  such  as</paragraph>
+    <paragraph>word  tokenization,  stop- word  and  punctuation  removal,  and</paragraph>
+    <paragraph>stemming  to  preprocess  the  text  and  extract  keywords.  The</paragraph>
+    <paragraph>system then compares the keywords in the student’s answer</paragraph>
+    <paragraph>with  the  keywords  in  the  model  answer  and  calculates  a</paragraph>
+    <paragraph>similarity score. Based on the score, the system assigns marks</paragraph>
+    <paragraph>to the student and displays them on the web interface.</paragraph>
+    <paragraph>[13] for the provision of a system for the automatic scoring of</paragraph>
+    <paragraph>descriptive answers of machine learning. Feature extraction is</paragraph>
+    <paragraph>another   important   process   involved   in   the   system   where</paragraph>
+    <paragraph>features are extracted through n-gram, cosine similarity, latent</paragraph>
+    <paragraph>semantic analysis, and string similarity. It is also employed in</paragraph>
+    <paragraph>the  use  of  categorization  models  such  as  artificial  neural</paragraph>
+    <paragraph>networks,  support  vector  machines,  and  linear  regression  to</paragraph>
+    <paragraph>assign  grades.  The  system  also  affords  giving  the  specific</paragraph>
+    <paragraph>scores  reflecting  the  level  of  answers,  recommendations  and</paragraph>
+    <paragraph>tips. This paper highlights the literature review focusing on the</paragraph>
+    <paragraph>implicit  automated  question  answering  natura  language,  and</paragraph>
+    <paragraph>the  evolution  of  research  in  this field  starting  from  the  initial</paragraph>
+    <paragraph>advancement in artificial intelligence till the present time. The</paragraph>
+    <paragraph>paper categorizes the existing systems into three types: which</paragraph>
+    <paragraph>are called corpus-based, information extraction, and mapping.</paragraph>
+    <paragraph>Furthermore,  the  paper  also  provides  an  overview  of  the</paragraph>
+    <paragraph>research  limitations  and  future  tasks  in  the  domain  which</paragraph>
+    <paragraph>include  content  analysis,  semantic  analysis,  and  feedback</paragraph>
+    <paragraph>system.</paragraph>
+    <paragraph>[14] addresses  the  challenge  of  evaluating  students’</paragraph>
+    <paragraph>performance   through   answer   scripts.   Traditional   manual</paragraph>
+    <paragraph>evaluation  can  be  biased  and  is  influenced by  various  factors</paragraph>
+    <paragraph>like  the  mood  swing  of  the  evaluator  and  the  inter-relation</paragraph>
+    <paragraph>between  the  student  and  evaluator.  The  paper  proposes  an</paragraph>
+    <paragraph>automatic  answer  script  evaluation  system  based  on  Natural</paragraph>
+    <paragraph>Language  Processing  (NLP).  The  system  takes  a  student’s</paragraph>
+    <paragraph>written  answer  as  input  and  automatically  scores  marks  after</paragraph>
+    <paragraph>the  evaluation.  The  system  considers  all  possible  factors  like</paragraph>
+    <paragraph>spelling   error,   grammatical   error,   and   various   similarity</paragraph>
+    <paragraph>measures for scoring marks. The system uses NLP for handling</paragraph>
+    <paragraph>the  English  language  used  in  the  answers.  For  summary</paragraph>
+    <paragraph>generation     from     the     extracted     text,     keyword-based</paragraph>
+    <paragraph>summarization  techniques are  used.  Four  similarity  measures</paragraph>
+    <paragraph>(Cosine,   Jaccard,   Bigram,   and   Synonym)   are   used   as</paragraph>
+    <paragraph>parameters for generating the final mark. The paper discusses</paragraph>
+    <paragraph>the motivation behind the automated answer script evaluation,</paragraph>
+    <paragraph>which   includes   less   time   consumption,   less   manpower</paragraph>
+    <paragraph>involvement,  prohibiting  human  evaluator’s  psychological</paragraph>
+    <paragraph>changes, and easy record keeping and extraction.</paragraph>
+    <paragraph>[15] The  paper  presents  a  text  analysis  pipeline  consisting  of</paragraph>
+    <paragraph>four  stages:  OCR,  sentence  boundary  detection,  tokenization,</paragraph>
+    <paragraph>and  part-of-speech  tagging.  The paper  uses  freely  available</paragraph>
+    <paragraph>opensource software packages for each stage, and applies them</paragraph>
+    <paragraph>to a large dataset of scanned news articles with different levels</paragraph>
+    <paragraph>of degradation. It then compares the results of the text analysis</paragraph>
+    <paragraph>stages on the clean and noisy versions of the same documents</paragraph>
+    <paragraph>using  the  proposed  evaluation  paradigm,  which  can  identify</paragraph>
+    <paragraph>and  track  individual  OCR  errors  and  their  cascading  effects.</paragraph>
+    <paragraph>The paper also proposes a novel evaluation paradigm based on</paragraph>
+    <paragraph>hierarchical dynamic programming to measure and analyze the</paragraph>
+    <paragraph>impact of OCR errors on NLP stages.</paragraph>
+    <paragraph>3. ARCHITECTURE</paragraph>
+    <paragraph>International Journal of Computer Applications (0975 – 8887)</paragraph>
+    <paragraph>Volume 186 – No.42, September 2024</paragraph>
+    <paragraph>25</paragraph>
+    <paragraph>Fig 1. Proposed Architecture</paragraph>
+    <paragraph>The  suggested  architecture  of  the  system  offers  a  complete</paragraph>
+    <paragraph>solution  to  automate  the  process  of  checking  answer  scripts</paragraph>
+    <paragraph>with the use modern technologies for efficiency and precision</paragraph>
+    <paragraph>as  well  as  ensuring  that  user  friendliness  and  data  security  is</paragraph>
+    <paragraph>maintained. A web-based interface that is easy to navigate for</paragraph>
+    <paragraph>both   teachers   and   learners   takes   center   stage   in   this</paragraph>
+    <paragraph>architectural  design.  Educators  may  upload  the  scripts,  view</paragraph>
+    <paragraph>evaluated  results  and  give  feedback  through  this  hub.  It  is</paragraph>
+    <paragraph>designed  in  such  a  way  that  anyone  can  understand  how  it</paragraph>
+    <paragraph>works easily thus allowing them to interact with different parts</paragraph>
+    <paragraph>seamlessly.</paragraph>
+    <paragraph>Another  important  integration  involves  an  Optical  Character</paragraph>
+    <paragraph>Recognition (OCR) system. This component makes it possible</paragraph>
+    <paragraph>to extract textually based information from responses including</paragraph>
+    <paragraph>those   written   by   hand   or   containing   non-textual   features</paragraph>
+    <paragraph>thereby  setting  ground  for  further  examination.  Next,  written</paragraph>
+    <paragraph>responses are analyzed by Natural Language Processing (NLP)</paragraph>
+    <paragraph>algorithms   which   consider   their   semantic   content   and</paragraph>
+    <paragraph>coherence.   NLP   analysis   investigates   language   subtleties,</paragraph>
+    <paragraph>measures    comprehension    depth    and    checks    contextual</paragraph>
+    <paragraph>appropriateness. The program also uses sophisticated linguistic</paragraph>
+    <paragraph>processing methods to determine student response quality more</paragraph>
+    <paragraph>accurately.</paragraph>
+    <paragraph>The architecture is supported by a safe database system so that</paragraph>
+    <paragraph>the  answer  scripts,  OCR  results,  NLP  analyses,  grades  and</paragraph>
+    <paragraph>feedback  can  be  stored  securely,  in  compliance  with  privacy</paragraph>
+    <paragraph>regulations  and  ensuring  confidentiality  as  well  as  integrity.</paragraph>
+    <paragraph>This  strong backend  infrastructure serves as  the  spine  of  this</paragraph>
+    <paragraph>system  where  it  also  protects  sensitive  data  while  enabling</paragraph>
+    <paragraph>various functions to take place. In general terms then; proposed</paragraph>
+    <paragraph>structure   represents   an   all-round,   advanced   technological</paragraph>
+    <paragraph>approach towards streamlining work-flows during assessment</paragraph>
+    <paragraph>automation  while  at  the  same  time  improving  on  educational</paragraph>
+    <paragraph>experiences among teachers as well learners.</paragraph>
+    <paragraph>4. METHODOLOGY</paragraph>
+    <paragraph>4.1 Data Collection and Preprocessing</paragraph>
+    <paragraph>1) Answer  Script  Collection:  Collect  a  diverse  set  of</paragraph>
+    <paragraph>handwritten  or  typed  answer  scripts  from  various</paragraph>
+    <paragraph>educational institutions or examinations. Ensure that</paragraph>
+    <paragraph>the  dataset  covers  a  range  of subjects,  difficulty</paragraph>
+    <paragraph>levels, and writing styles.</paragraph>
+    <paragraph>2) Digitization:  Scan  the  collected  answer  scripts  to</paragraph>
+    <paragraph>create  digital  images  or   documents   that   can   be</paragraph>
+    <paragraph>processed by the OCR system.</paragraph>
+    <paragraph>3) Ground  Truth  Preparation:  Establish  a  ground  truth</paragraph>
+    <paragraph>dataset by manually grading a subset of the collected</paragraph>
+    <paragraph>answer scripts. This ground truth will be used to train</paragraph>
+    <paragraph>and validate the NLP algorithms.</paragraph>
+    <paragraph>4.2 OCR Processing</paragraph>
+    <paragraph>1) OCR    Implementation:    Implement    an    Optical</paragraph>
+    <paragraph>Character  Recognition  (OCR)  system  to  extract  the</paragraph>
+    <paragraph>textual  content  from  the digitized  answer  scripts.</paragraph>
+    <paragraph>Ensure that the OCR system can handle both textual</paragraph>
+    <paragraph>and  non-textual  elements  (e.g.,  diagrams,  formulas)</paragraph>
+    <paragraph>present in the answer scripts.</paragraph>
+    <paragraph>2) OCR  Accuracy  Evaluation:  Assess  the  accuracy  of</paragraph>
+    <paragraph>the OCR system by comparing the extracted text with</paragraph>
+    <paragraph>the ground truth data. Identify and address any issues</paragraph>
+    <paragraph>or limitations in the OCR performance.</paragraph>
+    <paragraph>4.3 NLP Analysis</paragraph>
+    <paragraph>4) Feature   Extraction:   Develop   NLP   algorithms   to</paragraph>
+    <paragraph>extract  relevant  features  from  the  OCR-processed</paragraph>
+    <paragraph>text, such as semantic content, language complexity,</paragraph>
+    <paragraph>coherence, and contextual relevance.</paragraph>
+    <paragraph>5) Scoring   Model   Development:   Design   a   scoring</paragraph>
+    <paragraph>model  that can  effectively  evaluate  the  quality  and</paragraph>
+    <paragraph>correctness  of  the  written  responses  based  on  the</paragraph>
+    <paragraph>extracted  features.  Incorporate  techniques  like  text</paragraph>
+    <paragraph>similarity, sentiment analysis, and knowledge-based</paragraph>
+    <paragraph>scoring.</paragraph>
+    <paragraph>6) Model  Training  and  Validation:  Train  the  scoring</paragraph>
+    <paragraph>model using the ground truth dataset. Employ cross-</paragraph>
+    <paragraph>validation    techniques    to    ensure    the    model's</paragraph>
+    <paragraph>generalization and robustness.</paragraph>
+    <paragraph>7) Model Optimization:    Continuously    refine    and</paragraph>
+    <paragraph>optimize  the  NLP  algorithms  and  scoring  model</paragraph>
+    <paragraph>based on the performance on the validation dataset.</paragraph>
+    <paragraph>4.4 Data Storage and Management</paragraph>
+    <paragraph>1) Database Design: Design a secure database system to</paragraph>
+    <paragraph>store the digitized answer scripts, OCR results, NLP</paragraph>
+    <paragraph>analyses, grades, and feedback.</paragraph>
+    <paragraph>2) Data  Integrity  and  Privacy:  Ensure  data  integrity,</paragraph>
+    <paragraph>confidentiality, and compliance with relevant privacy</paragraph>
+    <paragraph>regulations    throughout    the    data    storage    and</paragraph>
+    <paragraph>management processes.</paragraph>
+    <paragraph>3) Database     Integration:     Integrate     the     database</paragraph>
+    <paragraph>seamlessly   with   the   other   components   of   the</paragraph>
+    <paragraph>proposed  system,  enabling  efficient  data  storage,</paragraph>
+    <paragraph>retrieval, and management.</paragraph>
+    <paragraph>International Journal of Computer Applications (0975 – 8887)</paragraph>
+    <paragraph>Volume 186 – No.42, September 2024</paragraph>
+    <paragraph>26</paragraph>
+    <paragraph>Fig 2. Workflow Diagram</paragraph>
+    <paragraph>5.  RESULTS</paragraph>
+    <paragraph>To orchestrate this  sophisticated  system,  a  methodology  was</paragraph>
+    <paragraph>devised  to modernize  the  assessment  process  of  educational</paragraph>
+    <paragraph>institutions.”  A  dynamic  website  with  strong  login</paragraph>
+    <paragraph>authentication is built to upload and view answer scripts using</paragraph>
+    <paragraph>the above steps. The site also has an intuitive interface that can</paragraph>
+    <paragraph>be easily explored, the treasure trove of digitized scripts can be</paragraph>
+    <paragraph>accessed   by   student   ID,   department,   semester   exam   and</paragraph>
+    <paragraph>subject.</paragraph>
+    <paragraph>Upon submission, the answer scripts are subjected to an OCR</paragraph>
+    <paragraph>process  that  converts  the  handwriting  or  typed  data  into</paragraph>
+    <paragraph>computer-readable   text   form.   But   this   is   not   a   simple</paragraph>
+    <paragraph>mechanical  conversion  of  text — it’s really the beginning of</paragraph>
+    <paragraph>exactly what is often need: a place where key constructs from</paragraph>
+    <paragraph>each response are built, recorded and available for analysis.</paragraph>
+    <paragraph>The  extracted  text  is  carefully  recorded  in  a  secured  database</paragraph>
+    <paragraph>for  further  evaluation  and  feedback  from  levels  of  human</paragraph>
+    <paragraph>control  later  on.  But  the  magic  of  the  system  is  in  its  NLP</paragraph>
+    <paragraph>capabilities, where algorithms have been trained to hone in on</paragraph>
+    <paragraph>the  language and  actually  read  though  those  answers.  These</paragraph>
+    <paragraph>algorithms  are  very  good  at  picking  up  on  semantic  nuances,</paragraph>
+    <paragraph>peeling back the layers of complexity and checking responses</paragraph>
+    <paragraph>for  coherence  and  consistency  along  many  dimensions.  With</paragraph>
+    <paragraph>this  linguistic  expertise, they construct  a  bespoke  scoring</paragraph>
+    <paragraph>framework  that  ensures  the  questions  are  assessed  fairly  and</paragraph>
+    <paragraph>thoughtfully.  Moreover,  even  the  evaluation  is  generated,  the</paragraph>
+    <paragraph>response  is  looked  from  cosine  similarity  point of  view  to be</paragraph>
+    <paragraph>exactly  matched  with  some  ground  truth  in training  corpus.</paragraph>
+    <paragraph>This analysis is the objective foundation for awarding marks in</paragraph>
+    <paragraph>a  manner  that  guarantees  fairness  and  alleviates  any  teacher</paragraph>
+    <paragraph>bias in grading. Meanwhile, for answers adorned with diagrams</paragraph>
+    <paragraph>and visual representations, a cutting-edge deep learning model</paragraph>
+    <paragraph>takes center stage. This model, finely attuned to the intricacies</paragraph>
+    <paragraph>of  visual  data,  delivers  a  nuanced  assessment  based  on  the</paragraph>
+    <paragraph>similarity  and  fidelity  of  diagrams,  enriching  the  grading</paragraph>
+    <paragraph>process with a holistic perspective.</paragraph>
+    <paragraph>In essence, this amalgamation of OCR, NLP, and deep learning</paragraph>
+    <paragraph>technologies heralds a new era in educational assessment, one</paragraph>
+    <paragraph>characterized by precision, transparency, and adaptability. The</paragraph>
+    <paragraph>website   stands   not   only   as   a   testament   to   technological</paragraph>
+    <paragraph>innovation  but  also  as  a  beacon  of  progress,  ushering  in  a</paragraph>
+    <paragraph>paradigm shift in the way academic achievement is perceived</paragraph>
+    <paragraph>and evaluated. With data integrity and privacy enshrined at its</paragraph>
+    <paragraph>core,    this    system    embodies    the    ideals    of    trust    and</paragraph>
+    <paragraph>accountability, paving  the  way  for a  future  where  assessment</paragraph>
+    <paragraph>transcends mere scrutiny, evolving into a catalyst for growth</paragraph>
+    <paragraph>and excellence.</paragraph>
+    <paragraph>6. CONCLUSION</paragraph>
+    <paragraph>The   development   and   implementation   of   an   Automated</paragraph>
+    <paragraph>Answer    Script    Evaluation    System    represent    a    pivotal</paragraph>
+    <paragraph>advancement in the educational technology landscape, aiming</paragraph>
+    <paragraph>to  address  the  challenges  associated  with  manual  evaluation</paragraph>
+    <paragraph>processes. The system outlined in this report integrates cutting-</paragraph>
+    <paragraph>edge   technologies   such   as  Optical   Character  Recognition</paragraph>
+    <paragraph>(OCR)    and    Natural    Language    Processing    (NLP)    to</paragraph>
+    <paragraph>revolutionize the grading paradigm. The comprehensive set of</paragraph>
+    <paragraph>functional  requirements,  usability  enhancements,  and  non-</paragraph>
+    <paragraph>functional    considerations    collectively    shape    a    robust</paragraph>
+    <paragraph>framework for an efficient, accurate, and user-friendly solution.</paragraph>
+    <paragraph>The system's key functionalities, including user authentication,</paragraph>
+    <paragraph>answer script submission, OCR processing, NLP analysis, non-</paragraph>
+    <paragraph>textual   element   recognition,   grading   interface,   feedback</paragraph>
+    <paragraph>mechanism,  and  data  storage,  collectively  ensure  a  holistic</paragraph>
+    <paragraph>approach to automated evaluation. By implementing role-based</paragraph>
+    <paragraph>access control and real-time feedback mechanisms, the system</paragraph>
+    <paragraph>not only streamlines the evaluation process but also contributes</paragraph>
+    <paragraph>to  improved  educational  outcomes  and  personalized  learning</paragraph>
+    <paragraph>paths.</paragraph>
+    <paragraph>The   emphasis   on   non-functional   requirements,   including</paragraph>
+    <paragraph>performance,    scalability,    usability,    maintainability,    and</paragraph>
+    <paragraph>compatibility,  underscores  the  commitment  to  delivering  a</paragraph>
+    <paragraph>solution   that   meets   the   highest   standards   of   efficiency,</paragraph>
+    <paragraph>reliability,   and   adaptability.   The   software requirements,</paragraph>
+    <paragraph>centered  around  web  hosting,  NLP  modules,  and  a  secure</paragraph>
+    <paragraph>database, along with specific hardware prerequisites, form the</paragraph>
+    <paragraph>backbone   of   a   technology   stack   designed   to   handle   the</paragraph>
+    <paragraph>complexities of large- scale assessment processes.</paragraph>
+    <paragraph>7. REFERENCES</paragraph>
+    <paragraph>[1] A.  Rokade,  B.  Patil,  S.  Rajani,  S.  Revandkar,  and  R.</paragraph>
+    <paragraph>Shedge,   "Automated   Grading   System   Using   Natural</paragraph>
+    <paragraph>Language   Processing,"   in   2018   Second   International</paragraph>
+    <paragraph>Conference on Inventive Communication and</paragraph>
+    <paragraph>Computational   Technologies   (ICICCT),   Coimbatore,</paragraph>
+    <paragraph>India, 2018, pp. 1123-1127, doi:</paragraph>
+    <paragraph>10.1109/ICICCT.2018.8473170.</paragraph>
+    <paragraph>[2] V.S.  Sadanand,  K.R.  Guruvyas,  P.P.  Patil,  J.  Janardhan</paragraph>
+    <paragraph>Acharya, and S. Gunakimath Suryakanth, "An automated</paragraph>
+    <paragraph>essay evaluation system using natural language processing</paragraph>
+    <paragraph>and sentiment analysis," International Journal of Electrical</paragraph>
+    <paragraph>and Computer Engineering (IJECE), 2022.</paragraph>
+    <paragraph>[3] V.  Kumari,  P.  Godbole,  and  Y.  Sharma,  "Automatic</paragraph>
+    <paragraph>Subjective Answer Evaluation," 2023, doi:</paragraph>
+    <paragraph>10.5220/0011656000003411.</paragraph>
+    <paragraph>[4] A.K.R.  Maya,  J.  Nazura,  and  B.L.  Muralidhara, "Recent</paragraph>
+    <paragraph>International Journal of Computer Applications (0975 – 8887)</paragraph>
+    <paragraph>Volume 186 – No.42, September 2024</paragraph>
+    <paragraph>27</paragraph>
+    <paragraph>Trends   in   Answer   Script   Evaluation – A   Literature</paragraph>
+    <paragraph>Survey," 2023, doi: 10.2991/ahis.k.210913.014.</paragraph>
+    <paragraph>[5] Prof.  S.P.  Raut,  S.D.  Chaudhari,  V.B.  Waghole,  P.U.</paragraph>
+    <paragraph>Jadhav,   and   A.B.   Saste,   "Automatic   Evaluation   of</paragraph>
+    <paragraph>Descriptive Answers Using NLP and Machine Learning,"</paragraph>
+    <paragraph>2022, doi: 10.48175/IJARSCT-3030.</paragraph>
+    <paragraph>[6] S.  K.  et  al.,  "Automatic  Answer  Evaluation  Using  Deep</paragraph>
+    <paragraph>Learning Algorithms," 2022, doi:</paragraph>
+    <paragraph>10.31838/ecb/2023.12.s3.039.</paragraph>
+    <paragraph>[7] G.   Ng'Ochoi,   P.   Sijimol,   and   S.   Mariam   Varghese,</paragraph>
+    <paragraph>"Grading descriptive answer scripts using deep</paragraph>
+    <paragraph>[8] learning," International Journal of Innovative Technology</paragraph>
+    <paragraph>and Exploring Engineering, vol. 8, pp. 991-996, 2019.</paragraph>
+    <paragraph>[9] V.   Lakshmi   and   V.   Ramesh,   "Evaluating   Student's</paragraph>
+    <paragraph>Descriptive Answers Using Natural Language Processing</paragraph>
+    <paragraph>and Artificial Neural Networks," ISSN: 2320-2882, 2017.</paragraph>
+    <paragraph>[10] N. D. Kamraj, "Survey on Techniques used for Evaluation</paragraph>
+    <paragraph>of Exam Answer Papers," 2020.</paragraph>
+    <paragraph>[11] M.  Sebastian,  R.  Kunjumon,  S.  Shaji,  and  Prof.  S.  R.,</paragraph>
+    <paragraph>"DigiValuate:  Answer  Sheet  Evaluation  System  using</paragraph>
+    <paragraph>Natural Language Processing," 2021.</paragraph>
+    <paragraph>[12] S.   Mangesh,   P.   Maheshwari,   and   A.   Upadhyaya,</paragraph>
+    <paragraph>"Subjective   Answer   Script   Evaluation   using   Natural</paragraph>
+    <paragraph>Language Processing," 2022.</paragraph>
+    <paragraph>[13] V. Tanwar, "Machine Learning based Automatic Answer</paragraph>
+    <paragraph>Checker  Imitating  Human  Way  of  Answer  Checking,"</paragraph>
+    <paragraph>INTERNATIONAL   JOURNAL   OF   ENGINEERING</paragraph>
+    <paragraph>RESEARCH &amp; TECHNOLOGY (IJERT), vol. 10, no. 12,</paragraph>
+    <paragraph>December 2021.</paragraph>
+    <paragraph>[14] B.  S.  J.  Kapoor,  S.  M.  Nagpure,  S.  S.  Kolhatkar,  P.  G.</paragraph>
+    <paragraph>Chanore,  M.  M.  Vishwakarma,  and  R.  B.  Kokate,  "An</paragraph>
+    <paragraph>analysis of automated answer evaluation systems based on</paragraph>
+    <paragraph>machine  learning,"  in  2020  International  Conference  on</paragraph>
+    <paragraph>Inventive Computation Technologies (ICICT), Feb. 2020,</paragraph>
+    <paragraph>pp. 439–443, doi: 10.1109/ICICT48043.2020.9112429.</paragraph>
+    <paragraph>[15] M.   M.   Rahman   and   F.   H.   Siddiqui,   "NLP-based</paragraph>
+    <paragraph>Automatic Answer Script Evaluation," 2018.</paragraph>
+    <paragraph>[16] D. Lopresti, "Optical character recognition errors and their</paragraph>
+    <paragraph>effects on natural language processing," IJDAR, vol. 12,</paragraph>
+    <paragraph>pp. 141–151, 2009, DOI: 10.1007/s10032-009-0094-8.</paragraph>
+    <paragraph>IJCA</paragraph>
+    <paragraph>TM</paragraph>
+    <paragraph>: www.ijcaonline.org</paragraph>
+</document>

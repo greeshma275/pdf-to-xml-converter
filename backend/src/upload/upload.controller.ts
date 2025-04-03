@@ -1,14 +1,12 @@
-import { 
-  Controller, Post, UploadedFile, UseInterceptors, Get, Param, Res 
-} from '@nestjs/common';
+import { Controller, Post, UploadedFile, UseInterceptors, Get, Param, Res } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import { join } from 'path';
+import { extname, join } from 'path';
 import { PdfService } from './pdf.service';
 import * as fs from 'fs';
 import { Response } from 'express';
 
-// Ensure the "uploads" directory exists
+// Ensure the uploads directory exists
 const uploadDir = './uploads';
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
@@ -24,9 +22,8 @@ export class UploadController {
       storage: diskStorage({
         destination: uploadDir,
         filename: (req, file, callback) => {
-          // Remove spaces and keep original filename
-          const sanitizedFileName = file.originalname.replace(/\s+/g, '_');
-          callback(null, sanitizedFileName);
+          const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+          callback(null, file.fieldname + '-' + uniqueSuffix + extname(file.originalname));
         },
       }),
       fileFilter: (req, file, callback) => {
@@ -39,35 +36,17 @@ export class UploadController {
   )
   async uploadFile(@UploadedFile() file: Express.Multer.File) {
     try {
-      // Extract the base filename (without extension)
-      const baseFileName = file.originalname.replace(/\.[^/.]+$/, ""); 
-      const xmlFilename = `${baseFileName}.xml`; // Keep same name with .xml extension
-      const xmlFilePath = join(uploadDir, xmlFilename);
-
       // Convert PDF to XML
-      await this.pdfService.convertPdfToXml(file.path, xmlFilePath);
+      const xmlFilename = await this.pdfService.convertPdfToXml(file.filename);
+      const xmlFileUrl = `http://localhost:3001/upload/xml/${xmlFilename}`;
+
 
       return {
         message: 'File uploaded and converted successfully',
-        pdfFile: `http://localhost:3001/upload/pdf/${file.filename}`, // ✅ URL of uploaded PDF
-        xmlFile: `http://localhost:3001/upload/xml/${xmlFilename}`, // ✅ URL of converted XML
-        fileName: file.filename, // ✅ Original file name
+        xmlFile: xmlFileUrl, // ✅ Returns full URL for frontend
       };
     } catch (error) {
       return { message: 'Conversion failed', error: error.message };
-    }
-  }
-
-  @Get('/pdf/:filename')
-  async getPdfFile(@Param('filename') filename: string, @Res() res: Response) {
-    try {
-      const filePath = join(uploadDir, filename);
-      if (!fs.existsSync(filePath)) {
-        return res.status(404).json({ message: 'File not found' });
-      }
-      res.sendFile(filePath, { root: '.' });
-    } catch (error) {
-      res.status(500).json({ message: 'Error retrieving file', error: error.message });
     }
   }
 
@@ -75,9 +54,11 @@ export class UploadController {
   async getXmlFile(@Param('filename') filename: string, @Res() res: Response) {
     try {
       const filePath = join(uploadDir, filename);
+      
       if (!fs.existsSync(filePath)) {
         return res.status(404).json({ message: 'File not found' });
       }
+      
       res.sendFile(filePath, { root: '.' });
     } catch (error) {
       res.status(500).json({ message: 'Error retrieving file', error: error.message });
