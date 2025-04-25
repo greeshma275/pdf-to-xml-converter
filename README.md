@@ -20,18 +20,21 @@ This is a full-stack web application that allows users to upload a PDF file and 
 - **JWT:** Used for secure authentication.  
 
 ## 🚀 Features
-![Screenshot 2025-03-31 193632](https://github.com/user-attachments/assets/27afe246-330d-46fe-9885-2075aae396e3)
 
+
+![Screenshot 2025-04-25 161727](https://github.com/user-attachments/assets/880a2254-2638-44d3-9ee5-4500f5578afd)
 
 - User authentication (Register/Login)
 - 
-![Screenshot 2025-03-31 193641](https://github.com/user-attachments/assets/51edacbb-edbb-4e61-97fb-8f1353b890c7) 
-  
+![Screenshot 2025-04-25 161738](https://github.com/user-attachments/assets/5e04e593-af45-41ec-a06b-4f6136b73465)
+  ![Screenshot 2025-04-25 161750](https://github.com/user-attachments/assets/fa68b018-acb0-4646-bfa7-e93b4e19505b)
+
 - PDF file upload!
 - 
 - Convert PDF to XML!
 -
-- ![Screenshot 2025-03-31 193651](https://github.com/user-attachments/assets/2c8f85b9-37aa-47c1-ae08-dcb600a87ae2)
+-
+
 
 - View converted files  
 - Copy and download converted XML  
@@ -49,7 +52,7 @@ This is a full-stack web application that allows users to upload a PDF file and 
 - Copy and download functionality for the XML  
 - Simple list view of previous conversions  
 - Store conversion history in a database  
-
+![Screenshot 2025-04-25 161820](https://github.com/user-attachments/assets/ddba7905-812e-4cb9-b12f-435987498111)
 ## 📂 Project Structure
 
 ```
