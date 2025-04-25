@@ -1,9 +1,10 @@
-/* Gradient Background */
-/* Full-page Background with Opacity */
+/* Modern Light Theme UI with Enhanced Aesthetics */
+
+/* Base Styling */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,9 +12,11 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background-color: #f5f7fa;
+  color: #333;
 }
 
-/* Background Image with Opacity using ::before */
+/* Background Image with Subtle Overlay */
 body::before {
   content: "";
   position: absolute;
@@ -21,19 +24,20 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/bg.jpeg') no-repeat center center/cover;  /* Adjust this value for desired transparency */
-  z-index: -1; /* Places it behind everything */
+  background: url('/bg.jpeg') no-repeat center center/cover;
+  opacity: 0.15;
+  z-index: -1;
 }
 
-/* Navbar Styling */
+/* Navbar Styling - Clean and Modern */
 .navbar {
   width: 100%;
-  background: linear-gradient(135deg,#fdfcfd, #5c5b5b) ;
+  background: #ffffff;
   padding: 15px 0;
   display: flex;
   justify-content: center;
   gap: 30px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   left: 0;
@@ -43,162 +47,233 @@ body::before {
 /* Navbar Links */
 .navbar a {
   text-decoration: none;
-  color: #090909;
-  font-size: 18px;
-  font-weight: bold;
+  color: #4a6fa5;
+  font-size: 16px;
+  font-weight: 600;
   padding: 10px 20px;
   border-radius: 8px;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
 }
 
 /* Navbar Hover Effect */
 .navbar a:hover {
-  background: #040404;
-  color: white;
+  background: #eef2f7;
+  color: #2c4872;
+  transform: translateY(-2px);
 }
 
-/* Container Styling */
-/* Make the container expand automatically */
+/* Main Container Styling */
 .container {
-  background: linear-gradient(135deg, #f8f7f7, #bcbcbc);
-  width: 600px;  /* Keep the width fixed */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  margin-top: 100px; /* Adjusted for Navbar */
+  background: #ffffff;
+  width: 650px;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  margin-top: 100px;
   text-align: center;
-  border: 3px solid transparent;
-  transition: all 0.3s ease-in-out;
-  opacity: 0.8;
-  max-height: 80vh; /* Prevent excessive growth */
-  overflow-y: auto; 
-  overflow-x: hidden;/* Add scroll only when needed */
+  border: 1px solid #e1e7ef;
+  transition: all 0.3s ease;
+  max-height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #c2d1e2 #f5f7fa;
 }
 
-/* Ensure the history list items stack properly */
+.container:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #f5f7fa;
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #c2d1e2;
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #a3b8d3;
+}
+
+/* History List Styling */
 .history-list {
   list-style: none;
   padding: 0;
-  margin: 0; /* Remove extra spacing */
+  margin: 20px 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-/* Individual list items */
+/* Individual History Items */
 .history-item {
-  background: #f7f6f8;
-  padding: 10px 15px;
-  border-radius: 5px;
+  background: #f8fafd;
+  padding: 14px 18px;
+  border-radius: 8px;
   font-size: 14px;
-  font-weight: bold;
-  color: #0d0d0d;
+  color: #4a5568;
   display: flex;
   justify-content: space-between;
   align-items: center;
   word-wrap: break-word;
+  border-left: 4px solid #4a6fa5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
 }
 
+.history-item:hover {
+  background: #eef2f7;
+  transform: translateX(2px);
+}
 
-/* Styled File Upload Button */
+/* Custom File Upload Button */
 input[type="file"] {
-  display: none; /* Hide Default Input */
+  display: none;
 }
 
 .custom-file-upload {
-  background: #111111; /* Pastel Pink */
-  color: #fafafb;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
+  background: #4a6fa5;
+  color: white;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
   display: inline-block;
   text-align: center;
-  border: 2px solid #5f5e60;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 15px;
-  margin-right: 50px;
-}
-
-/* File Upload Hover Effect */
-.custom-file-upload:hover {
-  background: #444444;
-  color: rgb(6, 6, 6);
-  border-color: #7e7e7d;
-  transform: scale(1.05);
-}
-
-/* Upload Button */
-button {
-  background: #070707; /* Pastel Pink */
-  color: rgb(250, 249, 249);
   border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
-}
-
-/* Hover Effect */
-button:hover {
-  background: #4f4f4f; /* Lighter Pink */
-  transform: scale(1.05);
-  color: black;
-}
-
-/* Active (Click) Effect */
-button:active {
-  background: #3e3e3e;
-  transform: scale(0.98);
-}
-
-/* Conversion History */
-
-
-/* Logout Button (Outside Container) */
-.logout-btn {
-  background: #f3f1f1;
-  color: rgb(11, 11, 11);
-  margin-top: 15px;
-  padding: 12px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Logout Button Hover Effect */
-.logout-btn:hover {
-  background: #505050;
-  color:#040404;
-  transform: scale(1.05);
-}
-
-/* Logout Button Click Effect */
-.logout-btn:active {
-  transform: scale(0.98);
-}
-input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0px;
-  border: 2px solid #4f4f4f;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 8px rgba(74, 111, 165, 0.2);
+  margin-bottom: 18px;
   margin-right: 20px;
 }
-input:focus {
-  border-color: #3d3c3d;
-  outline: none;
-  box-shadow: 0px 0px 10px rgba(74, 74, 74, 0.5);
+
+.custom-file-upload:hover {
+  background: #3a5a85;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3);
 }
 
+.custom-file-upload:active {
+  transform: translateY(0);
+}
+
+/* Button Styling */
+button {
+  background: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(74, 111, 165, 0.2);
+  margin-top: 15px;
+}
+
+button:hover {
+  background: #3a5a85;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  background: #2c4872;
+}
+
+/* Logout Button */
+.logout-btn {
+  background: #f8fafd;
+  color: #4a6fa5;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e1e7ef;
+}
+
+.logout-btn:hover {
+  background: #eef2f7;
+  color: #3a5a85;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+/* Input Field Styling */
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #f8fafd;
+  color: #4a5568;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+input:focus {
+  border-color: #4a6fa5;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.1);
+  background: white;
+}
+
+/* Page Title/Header Styling */
+h1, h2 {
+  color: #2c4872;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Success/Status Messages */
+.status-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 15px 0;
+  font-size: 14px;
+  background: #e6f3ff;
+  color: #2c4872;
+  border-left: 4px solid #4a6fa5;
+}
+
+/* Add some subtle animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  animation: fadeIn 0.5s ease-out;
+}

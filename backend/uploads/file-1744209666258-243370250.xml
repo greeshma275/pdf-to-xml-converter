@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <paragraph>Introduction to Domain</paragraph>
+    <paragraph>Artificial Intelligence and Machine Learning</paragraph>
+    <paragraph>Artificial Intelligence (AI) enables machines to perform tasks that typically require human</paragraph>
+    <paragraph>intelligence, such as decision-making, speech recognition, and problem-solving.</paragraph>
+    <paragraph>Machine Learning (ML) is a subset of AI that allows systems to learn from data and improve</paragraph>
+    <paragraph>their performance without explicit programming.</paragraph>
+    <paragraph>Usages &amp; Applications:</paragraph>
+    <paragraph> Healthcare: Disease prediction, medical imaging</paragraph>
+    <paragraph> Finance: Fraud detection, stock market analysis</paragraph>
+    <paragraph> Retail: Personalized recommendations, demand forecasting</paragraph>
+    <paragraph> Autonomous Vehicles: Self-driving technology</paragraph>
+    <paragraph> Robotics: Smart automation in industries</paragraph>
+    <paragraph> Customer Service: Chatbots, virtual assistants</paragraph>
+    <paragraph>AI and ML are transforming industries, making processes smarter and more efficient.</paragraph>
+    <paragraph>Introduction to Title</paragraph>
+    <paragraph>AI Based Personality Improvisation using Machine Learning</paragraph>
+    <paragraph>The availability of high-dimensional and fine-grained data about human behaviour has made</paragraph>
+    <paragraph>researching and observing human behaviour much easier. For example, mobile sensing studies</paragraph>
+    <paragraph>and data collected from daily activities have greatly impacted how psychologists conduct</paragraph>
+    <paragraph>research and administer personality assessments.</paragraph>
+    <paragraph>In this direction, machine learning models have the potential to revolutionize research and</paragraph>
+    <paragraph>assessment  in  personality  psychology.  Algorithms  can  handle  large  datasets,  including</paragraph>
+    <paragraph>thousands of attributes, without issues of collinearity. Additionally, ML algorithms are highly</paragraph>
+    <paragraph>efficient at recognizing patterns in datasets that humans may not be able to detect. These ML</paragraph>
+    <paragraph>models can lead to more accurate, objective, and automated personality assessments.</paragraph>
+    <paragraph>Another example would be social media, where people express their likes, thoughts, feelings,</paragraph>
+    <paragraph>and  opinions.  Machine  learning  models  have  been  effectively  using  this  data  to  predict</paragraph>
+    <paragraph>individuals'  "Big  Five"  (OCEAN)  personality  traits. Various  supervised  machine  learning</paragraph>
+    <paragraph>algorithms, such as Naïve Bayes and Support Vector Machines, are widely used in industries</paragraph>
+    <paragraph>to  predict  personality  traits.  Additionally,  researchers  have  recently  started  applying</paragraph>
+    <paragraph>unsupervised learning methods to identify other psychological constructs in digital data</paragraph>
+</document>

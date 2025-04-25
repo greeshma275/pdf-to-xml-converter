@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <paragraph>© 2022 JETIR August 2022, Volume 9, Issue 8                                                         www.jetir.org (ISSN-2349-5162)</paragraph>
+    <paragraph>JETIRFQ06040 Journal of Emerging Technologies and Innovative Research (JETIR) www.jetir.org 215</paragraph>
+    <paragraph>Subjective Answer Script Evaluation using</paragraph>
+    <paragraph>Natural Language Processing</paragraph>
+    <paragraph>1</paragraph>
+    <paragraph>Sangeeta Mangesh,</paragraph>
+    <paragraph>2</paragraph>
+    <paragraph>Prateek Maheshwari,</paragraph>
+    <paragraph>3</paragraph>
+    <paragraph>Aditi Upadhyaya,</paragraph>
+    <paragraph>1</paragraph>
+    <paragraph>Faculty,</paragraph>
+    <paragraph>2,3</paragraph>
+    <paragraph>Undergraduate Students</paragraph>
+    <paragraph>123</paragraph>
+    <paragraph>Department of ECE, JSS Academy of Technical Education Noida-201301(UP)</paragraph>
+    <paragraph>Abstract:  The study projects a  model developed to evaluate subjective answer scripts using NLP and Machine  Learning. The</paragraph>
+    <paragraph>motivation comes from the challenges encountered during the recent COVID-19 pandemic. This work presents the evaluation of</paragraph>
+    <paragraph>subjective answers and automatically  awards  score  based  on  the  similarity  feature  and the  answer keywords  from  the  reference</paragraph>
+    <paragraph>solution.  The model is  developed  using Natural  Language  Processing  model that  takes  advantage  of  key  attributes  from  the</paragraph>
+    <paragraph>descriptive answers in namely keywords, QST, and grammar. A Machine learning approach then is used to train this model using</paragraph>
+    <paragraph>Gaussian naive Bayes approach yielding an accuracy of around 80%.</paragraph>
+    <paragraph>Index Terms – NLP Natural Language Processing, QST-Quantum Serge Therapy, ML-Machine Learning.</paragraph>
+    <paragraph>I. INTRODUCTION</paragraph>
+    <paragraph>This paper presents research carried out to provide solution for the subjective answer script evaluation encountered mainly during</paragraph>
+    <paragraph>the  COVID-19 pandemic  and lockdown, A model that  aids in  automated evaluation, reward of  marks  for a  descriptive answer  is</paragraph>
+    <paragraph>developed using natural language processing and machine learning.</paragraph>
+    <paragraph>Though  there  have  been  several  research work  and models developed  to  suggest  the  solution  to  the  subjective  answer  script</paragraph>
+    <paragraph>evaluation challenge, the highlighting feature of this is automated score allocation based on three different entities  namely keywords,</paragraph>
+    <paragraph>quantum serge therapy and grammar being incorporated in a single model.</paragraph>
+    <paragraph>An automated assessment  system developed  having verified  accuracy  and  trainability pf  the  model.  With  an  additional</paragraph>
+    <paragraph>incorporation of artificial intelligence such a system can help in reducing burden on the education system and delays in publication</paragraph>
+    <paragraph>of  results.  It  can  facilitate  entire  teaching  community  to  enhance  their  productivity,  contribute  more  efficiently  towards  active</paragraph>
+    <paragraph>teaching-learning. A block schematic shows how the is being processed within the system using NLP (Figure-1)</paragraph>
+    <paragraph>Figure-1 System -Data Flow Diagram</paragraph>
+    <paragraph>II. EXISTING SYSTEMS: A REVIEW</paragraph>
+    <paragraph>The research work  that addresses uses the method of  text extraction from the answer  sheet , estimating  different  similarities</paragraph>
+    <paragraph>between summarized extracted text and stored correct answers, and then assign a weight value to each calculated parameters to score</paragraph>
+    <paragraph>the answer script[1]. An image processing technique is used for text extraction as a preprocessing part. The image processing has</paragraph>
+    <paragraph>been a text extraction in an another research that aims to automate OMR sheet[2]. This projected research utilizes the artificial neural</paragraph>
+    <paragraph>network to attain better accuracy for optically recognize the character. The proposed approach is tested and implemented on character</paragraph>
+    <paragraph>database consisting of English characters, digits and special characters.[3] The paper also discusses other methods used for evaluation</paragraph>
+    <paragraph>of OMR answer sheets quickly and efficiently by other researchers [3]. Focusing on the new branch ,a Computer assisted Assessment</paragraph>
+    <paragraph>(CAA) a method to study how computers can be utilized to evaluate the learning progress of students is projected in a research [4].</paragraph>
+    <paragraph>There are other research papers presenting machine learning techniques for yielding better results of the implemented model[4]–[8]</paragraph>
+    <paragraph>The  techniques to  mention  include   modified BLEU  (M-BLEU) algorithm  presented  to perform  an  assessment, using established</paragraph>
+    <paragraph>repository  of  reference  answers  written  by  course  instructors  or  related  experts,  application  of  the  m- BLEU  algorithm  to  find</paragraph>
+    <paragraph>© 2022 JETIR August 2022, Volume 9, Issue 8                                                         www.jetir.org (ISSN-2349-5162)</paragraph>
+    <paragraph>JETIRFQ06040 Journal of Emerging Technologies and Innovative Research (JETIR) www.jetir.org 216</paragraph>
+    <paragraph>similarity  and  producing  subsequent  outcome  based  on  the  comparison.[4].Machine  learning  using  application  of  probabilistic</paragraph>
+    <paragraph>sematic/ text matching techniques [8],and  using ontology [9].</paragraph>
+    <paragraph>A machine learning approach based on categorization of the  question and student answers using Naive Bayes classification is also</paragraph>
+    <paragraph>presented [6] in which the classifier adopts a supervised learning with direct probability to choose the best likelihood of answers. Use</paragraph>
+    <paragraph>of image processing tools for identification of signs and use of natural language processing for handwritten text recognition [10],</paragraph>
+    <paragraph>[11]for subjective answer sheet evaluation is also presented in the existing research papers projected for development of automated</paragraph>
+    <paragraph>systems. [12], [13].</paragraph>
+    <paragraph>The elaborate study of automated answer sheet evaluation has been projected for embedding it into a learning management system</paragraph>
+    <paragraph>using natural language processing  tools such as Wordnet, Word2vec, word mover's distance (WMD), cosine similarity, multinomial</paragraph>
+    <paragraph>naive  bayes  (MNB),  and  term  frequency-inverse  document  frequency  (TF-IDF)  have  been  used  to  evaluate  descriptive  answers</paragraph>
+    <paragraph>automatically[7], [8].</paragraph>
+    <paragraph>III. MODEL DESIGN AND IMPLEMENTATION</paragraph>
+    <paragraph>Studying the  existing available  research works, a  solution for evaluating subjective answer script proposed through this paper</paragraph>
+    <paragraph>using natural language processing and machine learning approach. The proposed model is implemented using Python entirely which</paragraph>
+    <paragraph>is open source and very rich in terms of its libraries having precision image processing functions. [14], [15]The model is trained to</paragraph>
+    <paragraph>yield better results using machine learning.[10], [11], [16], [17]</paragraph>
+    <paragraph>The proposed system consists of data collection and annotation, pre-processing module, similarity measurement module, model</paragraph>
+    <paragraph>training module, results predicting module, machine learning model module, and final result predicting module.</paragraph>
+    <paragraph>First, the inputs are taken from the user, which consists of keywords, solutions, and answers. Use of cosine similarity is preferred</paragraph>
+    <paragraph>as it captures the orientation (the angle) of the text features in the documents when plotted on a multi-dimensional space, where each</paragraph>
+    <paragraph>dimension corresponds to a word in the document.[12], [13], [15], [18], [19] It also calculates the Euclidean distance instead if you</paragraph>
+    <paragraph>want  the  magnitude. The  metric  of  cosine  similarity  is  used  to  determine  how  similar subjective  answer  is  with  the  reference  or</paragraph>
+    <paragraph>standard expected answer regardless of the size of the text matter.</paragraph>
+    <paragraph>For training the model a dataset of reference answer or model answer is added in the repository and different answer sheets having</paragraph>
+    <paragraph>multiple answers to the same question have been evaluated.  dataset manually with the use of TexteGear API and some online student</paragraph>
+    <paragraph>and model answers.  Essentially, looking for the likelihood of event A if event B is true. Evidence is also referred to as Event B,</paragraph>
+    <paragraph>Bayes Theorem is used to calculate the chance of an event occurring given the probability of a previous event having formula as [3],</paragraph>
+    <paragraph>[11], [16], [20], [21]</paragraph>
+    <paragraph>푃(퐴/퐵) =</paragraph>
+    <paragraph>푃(퐵|퐴)푃</paragraph>
+    <paragraph>(</paragraph>
+    <paragraph>퐴</paragraph>
+    <paragraph>)</paragraph>
+    <paragraph>푃(퐵)</paragraph>
+    <paragraph>---------------------------------------------------------------------------(1)</paragraph>
+    <paragraph>P(B) =  0, where A and B are events . The priori of A is P(A) (the prior probability, i.e. Probability of event before evidence is</paragraph>
+    <paragraph>seen). The proof is a value assigned to an unknown instance's attribute (here, it is event B). P(A|B) is the a posteriori probability of</paragraph>
+    <paragraph>B, or the probability of an occurrence after seeing evidence. [16], [20]–[22]With this Bayes' theorem can be applied to the dataset</paragraph>
+    <paragraph>under study as:</paragraph>
+    <paragraph>푃</paragraph>
+    <paragraph>(</paragraph>
+    <paragraph>푦</paragraph>
+    <paragraph>|</paragraph>
+    <paragraph>푋</paragraph>
+    <paragraph>)</paragraph>
+    <paragraph>=</paragraph>
+    <paragraph>푃(푋|푦)푃(푦)</paragraph>
+    <paragraph>푃(푋)</paragraph>
+    <paragraph>-------------------------------------------------(2)</paragraph>
+    <paragraph>Using text processing libraries from python such as NumPy, Pandas, Fuzzy Wuzzy, requests, regular expressions the</paragraph>
+    <paragraph>Pre-processing of the text data under study has been accurately done,[23][14], [15]</paragraph>
+    <paragraph>Figure-2 : Comparison of the proposed system manually.</paragraph>
+    <paragraph>To test the model a local dataset has been used and validation is done for the data. The five questions evaluated manually and</paragraph>
+    <paragraph>using the system when compared the plot obtained is indicated in the figure 2.</paragraph>
+    <paragraph>IV. CONCLUSION:</paragraph>
+    <paragraph>The answer script evaluation system works very significantly comparing the model answers provided. The system is capable of</paragraph>
+    <paragraph>generating a text file that specify the awarded score for the answers. The similarity cosine values are the key features explored for</paragraph>
+    <paragraph>the successful implementation of the system.</paragraph>
+    <paragraph>The model has been implemented and tested successfully re-arranging the dataset through multiple iterations .Though initially ,the</paragraph>
+    <paragraph>accuracy rate was (60-65) %, upon enhancing the dataset and with some minor fine tuning to the model the model yielded accuracy</paragraph>
+    <paragraph>of almost 80%. The tool will give an added advantage to the educators that can aid in answer script evaluation flowless , economic</paragraph>
+    <paragraph>and time saving.</paragraph>
+    <paragraph>The  model may  be embedded  into  any  Learning  Management  Systems,  Document  verification/Authentication  systems,  and</paragraph>
+    <paragraph>further  can  be  enhanced through  incorporating  mathematical  tools  for evaluating  specific  mathematical,  chemical  equations  with</paragraph>
+    <paragraph>precision.</paragraph>
+    <paragraph>5</paragraph>
+    <paragraph>4.5</paragraph>
+    <paragraph>4</paragraph>
+    <paragraph>3.5</paragraph>
+    <paragraph>1</paragraph>
+    <paragraph>4.2</paragraph>
+    <paragraph>4.3</paragraph>
+    <paragraph>4</paragraph>
+    <paragraph>3.2</paragraph>
+    <paragraph>0</paragraph>
+    <paragraph>Q1Q2Q3Q4Q5</paragraph>
+    <paragraph>Propsed System Validation</paragraph>
+    <paragraph>ManualProposed Sustem</paragraph>
+    <paragraph>© 2022 JETIR August 2022, Volume 9, Issue 8                                                         www.jetir.org (ISSN-2349-5162)</paragraph>
+    <paragraph>JETIRFQ06040 Journal of Emerging Technologies and Innovative Research (JETIR) www.jetir.org 217</paragraph>
+    <paragraph>REFERENCES</paragraph>
+    <paragraph>[1] M. M. Rahman and F. H. Siddiqui, “NLP-based Automatic Answer Script Evaluation,” DUET J., vol. 35, no. 1, 2018.</paragraph>
+    <paragraph>[2] N. Kakade and D. R. C. Jaiswal, “Omr Sheet Evaluation Using Image Processing,” J. Emerg. Technol. Innov. Res., vol. 4,</paragraph>
+    <paragraph>no. 12, pp. 640–643, 2017, [Online]. Available: www.jetir.org.</paragraph>
+    <paragraph>[3] B. Vani, M. S. Beaulah, and R. Deepalakshmi, “High accuracy optical character recognition algorithms using learning array</paragraph>
+    <paragraph>of  ANN,” 2014   Int.   Conf.   Circuits,   Power   Comput.   Technol.   ICCPCT   2014,   pp.   1474–1479,   2014,   doi:</paragraph>
+    <paragraph>10.1109/ICCPCT.2014.7054772.</paragraph>
+    <paragraph>[4] F. Noorbehbahani and A. A. Kardan, “The automatic assessment of free text answers using a modified BLEU algorithm,”</paragraph>
+    <paragraph>Comput. Educ., vol. 56, no. 2, pp. 337–345, 2011, doi: 10.1016/j.compedu.2010.07.013.</paragraph>
+    <paragraph>[5] P. Patil, S. Patil, V. Miniyar, and A. Bandal, “Subjective Answer Evaluation Using Machine Learning,” Int. J. Pure Appl.</paragraph>
+    <paragraph>Math., vol. 118, no. 24, pp. 1–13, 2018.</paragraph>
+    <paragraph>[6] P. Sinha and A. Kaul, “Answer Evaluation Using Machine Learning Answer Evaluation Using Machine Learning View</paragraph>
+    <paragraph>project   Answer   Evaluation   Using   Machine   Learning,”   no.   March   2018, 2018,    [Online].     Available:</paragraph>
+    <paragraph>https://www.researchgate.net/publication/333856264.</paragraph>
+    <paragraph>[7] M. F. Bashir, H. Arshad, A. R. Javed, N. Kryvinska, and S. S. Band, “Subjective Answers Evaluation Using Machine</paragraph>
+    <paragraph>Learning  and  Natural  Language  Processing,” IEEE    Access,    vol. 9,    pp.    158972–158983,    2021,    doi:</paragraph>
+    <paragraph>10.1109/ACCESS.2021.3130902.</paragraph>
+    <paragraph>[8] V. Nandini and P. Uma Maheswari, “Automatic assessment of descriptive answers in online examination system using</paragraph>
+    <paragraph>semantic relational features,” J. Supercomput., vol. 76, no. 6, pp. 4430–4448, 2020, doi: 10.1007/s11227-018-2381-y.</paragraph>
+    <paragraph>[9] S. D. M and H. Mittal, “Machine Learning Techniques with Ontology for Subjective Answer Evaluation,” Int. J. Nat. Lang.</paragraph>
+    <paragraph>Comput., vol. 5, no. 2, pp. 01–11, 2016, doi: 10.5121/ijnlc.2016.5201.</paragraph>
+    <paragraph>[10] J. C. B. Edited By Mark D. Shermis, Automated Essay Scoring A Cross-disciplinary Perspective. Routledge Home, 2003.</paragraph>
+    <paragraph>[11] A. K. . Maya, J. Nazura, and B. L. Muralidhara, “Recent Trends in Answer Script Evaluation – A Literature Survey,” Proc.</paragraph>
+    <paragraph>3rd  Int.  Conf.  Integr. Intell.  Comput.  Commun.  Secur.  (ICIIC  2021),  vol.  4,  no.  Iciic,  pp.  105–112,  2021,  doi:</paragraph>
+    <paragraph>10.2991/ahis.k.210913.014.</paragraph>
+    <paragraph>[12] P. Wiemer-hastings, “Proceedings of the Annual Meeting of the Cognitive Science Adding syntactic information to LSA,”</paragraph>
+    <paragraph>2000.</paragraph>
+    <paragraph>[13] G. Revathi, “Indian Sign Board Recognition Using Image Processing Techniques,” vol. 2, no. 15, 2016.</paragraph>
+    <paragraph>[14] S. V. Anuj Gupta , Bohisattwa Majumber, Practical Natural Language Processing: A Comprehensive Guide to Building</paragraph>
+    <paragraph>Real-World NLP Systems. O′Reilly, 2020.</paragraph>
+    <paragraph>[15] Y. Vasiliev, Natural Language Processing with Python and spaCy: A Practical Introduction. Cenage Publications, 2020.</paragraph>
+    <paragraph>[16] “https://github.com/im-minion/Subjective-Answer-Evaluation.” .</paragraph>
+    <paragraph>[17] “https://www.geeksforgeeks.org/introduction-to-natural-language-processing/.”</paragraph>
+    <paragraph>https://www.geeksforgeeks.org/introduction-to-natural-language-processing/.</paragraph>
+    <paragraph>[18] “https://www.learndatasci.com/glossary/cosine-similarity/.” https://www.learndatasci.com/glossary/cosine-similarity/.</paragraph>
+    <paragraph>[19] “https://deepai.org/machine-learning-glossary-and-terms/cosine-similarity.” https://deepai.org/machine-learning-glossary-</paragraph>
+    <paragraph>and-terms/cosine-similarity.</paragraph>
+    <paragraph>[20] “https://www.techtarget.com/searchenterpriseai/definition/natural-language-processing-NLP.”</paragraph>
+    <paragraph>https://www.techtarget.com/searchenterpriseai/definition/natural-language-processing-NLP.</paragraph>
+    <paragraph>[21] “https://toloka.ai/.” https://toloka.ai/.</paragraph>
+    <paragraph>[22] “https://towardsdatascience.com/your-guide-to-natural-language-processing-nlp-48ea2511f6e1.”</paragraph>
+    <paragraph>https://towardsdatascience.com/your-guide-to-natural-language-processing-nlp-48ea2511f6e1.</paragraph>
+    <paragraph>[23] L. Ramalho, Fluent Python: Clear, Concise, and Effective Programming 1st Edition. .</paragraph>
+</document>
